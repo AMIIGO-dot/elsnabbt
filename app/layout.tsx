@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, 'max-snippet': -1, 'max-image-preview': 'large' },
   },
-  icons: { icon: '/favicon.ico' },
+  icons: { icon: '/icon.png', apple: '/icon.png' },
 };
 
 const websiteJsonLd = {

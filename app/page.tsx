@@ -13,7 +13,7 @@ export default function Home() {
   const [postnr, setPostnr] = useState('');
   const [kwh, setKwh] = useState(15000);
   const [results, setResults] = useState<ScrapedOffer[]>([]);
-  const [avtalstyp, setAvtalstyp] = useState('TIMPRIS');
+  const [avtalstyp, setAvtalstyp] = useState('KVARTSPRIS');
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const [dataSource, setDataSource] = useState('');
@@ -23,9 +23,9 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const avtalstyper = [
+    { key: 'KVARTSPRIS',   label: 'Kvartspris',   desc: 'Rörligt, sätts kvartalsvis' },
     { key: 'TIMPRIS',       label: 'Timpris',      desc: 'Följer börsen per timme' },
     { key: 'MÅNADSPRIS',   label: 'Månadspris',   desc: 'Rörligt, sätts månadsvis' },
-    { key: 'KVARTSPRIS',   label: 'Kvartspris',   desc: 'Rörligt, sätts kvartalsvis' },
     { key: 'FAST PRIS',    label: 'Fast pris',    desc: 'Låst pris, förutsägbart' },
     { key: 'MIXPRIS 1 ÅR', label: 'Mixpris 1 år', desc: 'Del fast, del rörligt' },
   ];

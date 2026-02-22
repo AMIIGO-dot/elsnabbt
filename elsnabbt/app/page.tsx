@@ -28,6 +28,8 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const [dataSource, setDataSource] = useState('');
+  const [hämtadTid, setHämtadTid] = useState('');
+  const [prisTypNote, setPrisTypNote] = useState('');
   const [showAdmin, setShowAdmin] = useState(false);
   const [adminPass, setAdminPass] = useState('');
   const [adminUnlocked, setAdminUnlocked] = useState(false);
@@ -50,6 +52,8 @@ export default function Home() {
       if (data.error) throw new Error(data.error);
       setResults(data.offers ?? []);
       setDataSource(data.källa ?? '');
+      setPrisTypNote(data.prisTypNote ?? '');
+      setHämtadTid(data.hämtadTid ? new Date(data.hämtadTid).toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' }) : '');
     } catch (err) {
       console.error('Sökning misslyckades:', err);
       setResults([]);
@@ -247,10 +251,20 @@ export default function Home() {
               style={{ maxWidth: 800, margin: '0 auto', paddingBottom: 80 }}
             >
               {dataSource && (
-                <div style={{ textAlign: 'center', marginBottom: 24 }}>
+                <div style={{ textAlign: 'center', marginBottom: 16, display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap' }}>
                   <span style={{ fontSize: 13, color: C.textMuted, background: C.bgMuted, border: `1px solid ${C.border}`, borderRadius: 999, padding: '5px 14px', fontWeight: 600 }}>
                     Källa: {dataSource}
                   </span>
+                  {hämtadTid && (
+                    <span style={{ fontSize: 13, color: C.textMuted, background: C.bgMuted, border: `1px solid ${C.border}`, borderRadius: 999, padding: '5px 14px', fontWeight: 600 }}>
+                      Hämtades: {hämtadTid} (uppdateras varje timme)
+                    </span>
+                  )}
+                </div>
+              )}
+              {prisTypNote && (
+                <div style={{ background: '#fffbeb', border: '1px solid #fcd34d', borderRadius: 12, padding: '12px 16px', marginBottom: 20, fontSize: 13, color: '#92400e', lineHeight: 1.5 }}>
+                  <strong>ℹ️ Om priserna:</strong> {prisTypNote}
                 </div>
               )}
 

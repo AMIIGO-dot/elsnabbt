@@ -128,9 +128,20 @@ export async function GET(request: NextRequest) {
     };
   });
 
+  // Förklaringstext per avtalstyp
+  const prisTypNote: Record<string, string> = {
+    'TIMPRIS':       'Jämförpris = 12-månaders genomsnittligt spotpris + påslag. Ditt faktiska timpris varierar varje timme med elbörsen (Nordpool).',
+    'KVARTSPRIS':    'Jämförpris baserat på rullande genomsnitt. Priset sätts kvartalsvis efter föregående periods spotpris.',
+    'MÅNADSPRIS':    'Jämförpris baserat på rullande genomsnitt. Priset sätts månadsvis efter föregående periods spotpris.',
+    'FAST PRIS':     'Fast örespris under hela bindningstiden — exakt vad du betalar per kWh, oavsett hur börsen rör sig.',
+    'MIXPRIS 1 ÅR':  'En del av priset är fast, en del rörligt. Se avtalets detaljer för exakt fördelning.',
+  };
+
   return NextResponse.json({
     offers,
     källa:        'Energimarknadsinspektionen (ei.se)',
     spotAreaNote: `Elområde: ${elArea} · ${filtered.length} avtal`,
+    hämtadTid:   new Date().toISOString(),
+    prisTypNote:  prisTypNote[typParam] ?? '',
   });
 }

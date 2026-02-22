@@ -29,8 +29,17 @@ function fixEncoding(str: string): string {
   try { return decodeURIComponent(escape(str)); } catch { return str; }
 }
 
+// Säkerställ att URL har protocol-prefix
+function normaliseUrl(url?: string): string {
+  if (!url) return '';
+  const u = url.trim();
+  if (!u) return '';
+  return u.startsWith('http') ? u : `https://${u}`;
+}
+
 interface EiContract {
   AvtalId: number;
+  ElLeverantorId: number;
   ElLeverantorNamn: string;
   AvtalBenamning: string;
   AvtalJamforPris: number;
@@ -45,6 +54,15 @@ interface EiContract {
   BraMiljoval: boolean;
   Rabattavtal: boolean;
   RabattEndastNyaKunder: boolean;
+  Betalningsalternativ?: string;
+  Faktureringsalternativ?: string;
+}
+
+interface EiSupplier {
+  ElLeverantorId: number;
+  HemsidaURL?: string;
+  TelefonNr?: string;
+  Epost?: string;
 }
 
 function energiKallor(c: EiContract): string {
@@ -74,18 +92,25 @@ export async function GET(request: NextRequest) {
   const elArea = postnrToElArea(postnr);
   const natKr  = natAvgiftAr(elArea);
 
-  // Hämta avtal direkt från Energimarknadsinspektionens öppna API
+  // Hämta avtal + leverantörsinfo parallellt
   const apiUrl = `https://www1.ei.se/elinservices/api/json/SokAvtal?postNummer=${postnr}&forbrukning=${kwh}`;
-  const res = await fetch(apiUrl, {
-    headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0' },
-    next: { revalidate: 3600 },
-  });
+  const [res, suppliersRes] = await Promise.all([
+    fetch(apiUrl, { headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0' }, next: { revalidate: 3600 } }),
+    fetch('https://www1.ei.se/elinservices/api/json/GetElleverantorer', { headers: { Accept: 'application/json' }, next: { revalidate: 86400 } }),
+  ]);
 
   if (!res.ok) {
     return NextResponse.json({ error: `EI-API svarade ${res.status}` }, { status: 502 });
   }
 
   const allContracts: EiContract[] = await res.json();
+
+  // Bygg en snabb uppslagstabell för leverantörsinfo
+  const supplierMap = new Map<number, EiSupplier>();
+  if (suppliersRes.ok) {
+    const suppliers: EiSupplier[] = await suppliersRes.json();
+    for (const s of suppliers) supplierMap.set(s.ElLeverantorId, s);
+  }
 
   // Filtrera på vald avtalstyp
   const filtered = allContracts.filter(c => typIds.includes(c.AvtalTypId));
@@ -110,21 +135,38 @@ export async function GET(request: NextRequest) {
       : `${c.AvtalUppsagningstid} ${c.AvtalUppsagningstidEnhet === 'D' ? 'dagar' : 'mån'}`;
 
     return {
-      id:          c.AvtalId,
-      leverantor:  fixEncoding(c.ElLeverantorNamn),
-      avtalNamn:   fixEncoding(c.AvtalBenamning),
-      prisOre:     Math.round(c.AvtalJamforPris * 100) / 100,
+      id:            c.AvtalId,
+      leverantorId:  c.ElLeverantorId,
+      leverantor:    fixEncoding(c.ElLeverantorNamn),
+      avtalNamn:     fixEncoding(c.AvtalBenamning),
+      prisOre:       Math.round(c.AvtalJamforPris * 100) / 100,
       totalAr,
-      totalMan:    Math.round(totalAr / 12),
+      totalMan:      Math.round(totalAr / 12),
       besparing,
-      typ:         typParam.toLowerCase(),
-      gron:        isGron(c),
-      energiKalla: energiKallor(c),
+      typ:           typParam.toLowerCase(),
+      gron:          isGron(c),
+      braMiljoval:   c.BraMiljoval,
+      sol:           c.Sol,
+      vind:          c.Vind,
+      vatten:        c.Vatten,
+      bio:           c.Bio,
+      karnkraft:     c.Karnkraft,
+      energiKalla:   energiKallor(c),
       uppsTid,
-      kampanj:     c.Rabattavtal
+      uppsTidRaw:    c.AvtalUppsagningstid,
+      uppsTidEnhet:  c.AvtalUppsagningstidEnhet,
+      kampanj:       c.Rabattavtal
         ? (c.RabattEndastNyaKunder ? 'Rabatt nya kunder' : 'Rabatterat pris')
         : '',
-      källa:       'live' as const,
+      nyttaKunder:   c.RabattEndastNyaKunder,
+      betalning:     fixEncoding(c.Betalningsalternativ ?? ''),
+      fakturering:   fixEncoding(c.Faktureringsalternativ ?? ''),
+      kwh,
+      elArea,
+      leverantorUrl:     normaliseUrl(supplierMap.get(c.ElLeverantorId)?.HemsidaURL),
+      leverantorTelefon: supplierMap.get(c.ElLeverantorId)?.TelefonNr ?? '',
+      leverantorEpost:   supplierMap.get(c.ElLeverantorId)?.Epost ?? '',
+      källa:         'live' as const,
     };
   });
 

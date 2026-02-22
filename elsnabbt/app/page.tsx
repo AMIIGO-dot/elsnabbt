@@ -1,26 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Leaf, Star, TrendingDown, Lock, Trophy } from 'lucide-react';
-
-type ScrapedOffer = {
-  id?: number;
-  leverantor: string;
-  avtalNamn: string;
-  prisOre?: number;
-  totalAr: number;
-  totalMan: number;
-  besparing: number;
-  typ: string;
-  gron: boolean;
-  energiKalla?: string;
-  uppsTid?: string;
-  kampanj: string;
-  källa: 'live' | 'scrape' | 'beräknad';
-};
+import { Zap, Leaf, Star, TrendingDown, Lock, Trophy, ChevronRight } from 'lucide-react';
+import type { ScrapedOffer } from '@/lib/types';
 
 export default function Home() {
+  const router = useRouter();
   const [postnr, setPostnr] = useState('');
   const [kwh, setKwh] = useState(15000);
   const [results, setResults] = useState<ScrapedOffer[]>([]);
@@ -50,10 +37,17 @@ export default function Home() {
       const res = await fetch(`/api/compare?postnr=${postnr}&kwh=${kwh}&typ=${encodeURIComponent(avtalstyp)}`);
       const data = await res.json();
       if (data.error) throw new Error(data.error);
-      setResults(data.offers ?? []);
+      const offers: ScrapedOffer[] = data.offers ?? [];
+      setResults(offers);
       setDataSource(data.källa ?? '');
       setPrisTypNote(data.prisTypNote ?? '');
       setHämtadTid(data.hämtadTid ? new Date(data.hämtadTid).toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' }) : '');
+      // Spara för detalj-sida
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('elsnabbt_results', JSON.stringify(offers));
+        localStorage.setItem('elsnabbt_postnr', postnr);
+        localStorage.setItem('elsnabbt_kwh', String(kwh));
+      }
     } catch (err) {
       console.error('Sökning misslyckades:', err);
       setResults([]);
@@ -289,6 +283,7 @@ export default function Home() {
                         initial={{ opacity: 0, x: -16 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05 }}
+                        onClick={() => offer.id && router.push(`/avtal/${offer.id}`)}
                         style={{
                           background: C.bgCard,
                           border: `1.5px solid ${i === 0 ? C.green : C.border}`,
@@ -300,7 +295,10 @@ export default function Home() {
                           justifyContent: 'space-between',
                           gap: 16,
                           flexWrap: 'wrap',
+                          cursor: 'pointer',
+                          transition: 'box-shadow 0.15s, transform 0.15s',
                         }}
+                        whileHover={{ boxShadow: C.shadowHover, y: -2 }}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: 14, flex: 1, minWidth: 180 }}>
                           <div style={{
@@ -334,7 +332,7 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
                           {offer.besparing > 500 && (
                             <div style={{ textAlign: 'center' }}>
                               <div style={{ fontSize: 12, color: C.green, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Spara</div>
@@ -351,6 +349,7 @@ export default function Home() {
                             <div style={{ fontSize: 18, fontWeight: 900, color: C.text }}>{offer.totalMan.toLocaleString('sv-SE')} kr</div>
                             <div style={{ fontSize: 12, color: C.textLight }}>{offer.totalAr.toLocaleString('sv-SE')} kr/år</div>
                           </div>
+                          <ChevronRight style={{ color: C.textLight, flexShrink: 0 }} />
                         </div>
                       </motion.div>
                     ))}

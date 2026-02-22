@@ -5,17 +5,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, Leaf, Star, TrendingDown, Lock, Trophy } from 'lucide-react';
 
 type ScrapedOffer = {
+  id?: number;
   leverantor: string;
   avtalNamn: string;
+  prisOre?: number;
   totalAr: number;
   totalMan: number;
   besparing: number;
   typ: string;
   gron: boolean;
-  logo: string;
+  energiKalla?: string;
+  uppsTid?: string;
   kampanj: string;
-  källa: 'scrape' | 'beräknad';
-  bindningManader?: number;
+  källa: 'live' | 'scrape' | 'beräknad';
 };
 
 export default function Home() {
@@ -296,8 +298,8 @@ export default function Home() {
                           </div>
                           <div>
                             <div style={{ fontWeight: 800, fontSize: 16, color: C.text }}>{offer.leverantor}</div>
-                            <div style={{ fontSize: 13, color: C.textMuted, display: 'flex', alignItems: 'center', gap: 6, marginTop: 2, flexWrap: 'wrap' }}>
-                              <span>{offer.avtalNamn}</span>
+                            <div style={{ fontSize: 13, color: C.textMuted, marginTop: 2 }}>{offer.avtalNamn}</div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginTop: 4, flexWrap: 'wrap' }}>
                               {offer.gron && (
                                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3, background: C.greenLight, color: C.greenText, borderRadius: 999, padding: '1px 8px', fontSize: 11, fontWeight: 700 }}>
                                   <Leaf className="w-3 h-3" /> Grön
@@ -308,8 +310,11 @@ export default function Home() {
                                   {offer.kampanj}
                                 </span>
                               )}
-                              {offer.källa === 'beräknad' && (
-                                <span style={{ color: C.textLight, fontSize: 11 }}>beräknad</span>
+                              {offer.uppsTid && (
+                                <span style={{ color: C.textLight, fontSize: 11 }}>Uppsägn: {offer.uppsTid}</span>
+                              )}
+                              {offer.energiKalla && (
+                                <span style={{ color: C.textLight, fontSize: 11 }}>{offer.energiKalla}</span>
                               )}
                             </div>
                           </div>
@@ -325,6 +330,9 @@ export default function Home() {
                             </div>
                           )}
                           <div style={{ textAlign: 'right' }}>
+                            {offer.prisOre !== undefined && (
+                              <div style={{ fontSize: 12, color: C.green, fontWeight: 700, marginBottom: 2 }}>{offer.prisOre.toFixed(2)} öre/kWh</div>
+                            )}
                             <div style={{ fontSize: 12, color: C.textMuted, fontWeight: 600 }}>Per månad</div>
                             <div style={{ fontSize: 18, fontWeight: 900, color: C.text }}>{offer.totalMan.toLocaleString('sv-SE')} kr</div>
                             <div style={{ fontSize: 12, color: C.textLight }}>{offer.totalAr.toLocaleString('sv-SE')} kr/år</div>

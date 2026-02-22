@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Zap, Leaf, Star, TrendingDown, Lock, Trophy, ChevronRight } from 'lucide-react';
+import { Leaf, Star, TrendingDown, Lock, Trophy, ChevronRight } from 'lucide-react';
 import type { ScrapedOffer } from '@/lib/types';
 
 export default function Home() {
@@ -84,11 +84,8 @@ export default function Home() {
       {/* ── NAV ── */}
       <header style={{ borderBottom: `1px solid ${C.border}`, background: 'rgba(249,247,242,0.92)', backdropFilter: 'blur(16px)', position: 'sticky', top: 0, zIndex: 50 }}>
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2.5">
-            <div style={{ background: C.green, borderRadius: 10, padding: '6px 8px', display: 'flex' }}>
-              <Zap className="w-5 h-5 text-white" strokeWidth={2.5} />
-            </div>
-            <span style={{ fontWeight: 800, fontSize: 20, letterSpacing: '-0.5px', color: C.text }}>ElSnabbt</span>
+          <div className="flex items-center">
+            <img src="/logo.png" alt="Elblixten" style={{ height: 38 }} />
           </div>
           <button
             onClick={() => setShowAdmin(!showAdmin)}
@@ -421,11 +418,8 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer style={{ borderTop: `1px solid ${C.border}`, padding: '32px 24px', textAlign: 'center', color: C.textLight, fontSize: 13 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div style={{ background: C.green, borderRadius: 7, padding: '4px 5px', display: 'inline-flex' }}>
-              <Zap className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
-            </div>
-            <span style={{ fontWeight: 800, color: C.textMuted }}>ElSnabbt</span>
+          <div className="flex items-center justify-center mb-3">
+            <img src="/logo.png" alt="Elblixten" style={{ height: 28, opacity: 0.6 }} />
           </div>
           <p>Ingen ansvarighet för prisuppgifternas aktualitet. Konsultera alltid elnätsleverantören direkt.</p>
         </div>

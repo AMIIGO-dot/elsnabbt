@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Zap, Leaf, ExternalLink, Sun, Wind, Droplets, Flame, Atom, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Leaf, ExternalLink, Sun, Wind, Droplets, Flame, Atom, CheckCircle } from 'lucide-react';
 import type { ScrapedOffer } from '@/lib/types';
 
 const C = {
@@ -102,11 +102,8 @@ export default function AvtalPage() {
             <ArrowLeft className="w-4 h-4" />
             Tillbaka
           </button>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <div style={{ background: C.green, borderRadius: 8, padding: '5px 7px', display: 'flex' }}>
-              <Zap className="w-4 h-4 text-white" strokeWidth={2.5} style={{ color: '#fff' }} />
-            </div>
-            <span style={{ fontWeight: 800, fontSize: 18, letterSpacing: '-0.5px' }}>ElSnabbt</span>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="Elblixten" style={{ height: 34 }} />
           </div>
         </div>
       </header>

@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Leaf, Star, TrendingDown, Lock, Trophy, ChevronRight } from 'lucide-react';
 import type { ScrapedOffer } from '@/lib/types';
+import { blogPosts } from '@/lib/blog-data';
 
 export default function Home() {
   const router = useRouter();
@@ -21,6 +23,7 @@ export default function Home() {
   const [adminPass, setAdminPass] = useState('');
   const [adminUnlocked, setAdminUnlocked] = useState(false);
   const [showHousing, setShowHousing] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const avtalstyper = [
     { key: 'TIMPRIS',       label: 'Timpris',      desc: 'Följer börsen per timme' },
@@ -81,6 +84,17 @@ export default function Home() {
 
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.text }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          { '@type': 'Question', name: 'Hur jämför jag elavtal?', acceptedAnswer: { '@type': 'Answer', text: 'Ange ditt postnummer och din årsförbrukning i formuläret på Elblixten. Vi hämtar alla tillgängliga avtal från Energimarknadsinspektionens databas och sorterar dem billigast först – helt gratis.' } },
+          { '@type': 'Question', name: 'Vad är skillnaden mellan timpris och fast pris?', acceptedAnswer: { '@type': 'Answer', text: 'Timpris innebär att du betalar marknadens elpris varje timme. Fast pris låser din elproduktionskostnad under avtalsperioden (1–3 år). Rörligt pris är historiskt billigare i snitt men innebär mer osäkerhet.' } },
+          { '@type': 'Question', name: 'Kostar det något att byta elavtal?', acceptedAnswer: { '@type': 'Answer', text: 'Nej, det är helt gratis att byta elavtal i Sverige. Det är en lagstadgad rättighet. Din nya leverantör hanterar bytet åt dig.' } },
+          { '@type': 'Question', name: 'Vad ingår i det totala elpriset?', acceptedAnswer: { '@type': 'Answer', text: 'Det totala elpriset består av elproduktion (det jämförbara priset), elnätsavgift till ditt nätbolag, och statlig elskatt (54,875 öre/kWh 2025). Allt inklusive 25% moms.' } },
+          { '@type': 'Question', name: 'Hur ofta bör jag jämföra elavtal?', acceptedAnswer: { '@type': 'Answer', text: 'Minst en gång per år – och alltid när ditt avtal är på väg att löpa ut. Med Elblixten tar en jämförelse bara 30 sekunder.' } },
+        ],
+      }) }} />
 
       {/* ── NAV ── */}
       <header style={{ borderBottom: `1px solid ${C.border}`, background: 'rgba(249,247,242,0.92)', backdropFilter: 'blur(16px)', position: 'sticky', top: 0, zIndex: 50 }}>
@@ -88,12 +102,16 @@ export default function Home() {
           <div className="flex items-center">
             <img src="/logo.png" alt="Elblixten" style={{ height: 56 }} />
           </div>
-          <button
-            onClick={() => setShowAdmin(!showAdmin)}
-            style={{ fontSize: 13, color: C.textMuted, background: C.bgMuted, border: `1px solid ${C.border}`, borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontWeight: 600 }}
-          >
-            Admin
-          </button>
+          <nav style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+            <Link href="/tips" style={{ fontSize: 14, fontWeight: 600, color: C.textMuted, textDecoration: 'none' }}>Tips</Link>
+            <Link href="/blog" style={{ fontSize: 14, fontWeight: 600, color: C.textMuted, textDecoration: 'none' }}>Guider</Link>
+            <button
+              onClick={() => setShowAdmin(!showAdmin)}
+              style={{ fontSize: 13, color: C.textMuted, background: C.bgMuted, border: `1px solid ${C.border}`, borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontWeight: 600 }}
+            >
+              Admin
+            </button>
+          </nav>
         </div>
       </header>
 
@@ -408,6 +426,99 @@ export default function Home() {
         </AnimatePresence>
       </div>
 
+      {/* ── TIPS SEKTION ── */}
+      <section style={{ background: C.bgMuted, borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}`, padding: '72px 24px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 40 }}>
+            <h2 style={{ fontSize: 'clamp(22px, 4vw, 32px)', fontWeight: 900, letterSpacing: '-0.5px', marginBottom: 10 }}>Spara el – enkla tips</h2>
+            <p style={{ fontSize: 16, color: C.textMuted, maxWidth: 500, margin: '0 auto' }}>Små förändringar kan spara tusentals kronor per år.</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(210px, 1fr))', gap: 16, marginBottom: 28 }}>
+            {[
+              { emoji: '💡', title: 'Byt till LED', desc: 'Spara 80–90% på belysning. Snabb payback.' },
+              { emoji: '🌙', title: 'Tvätta på natten', desc: 'Elpriset är lägst kl. 22–06 med timpris.' },
+              { emoji: '🌡️', title: 'Sänk 1 grad', desc: '1 grad lägre inomhustemperatur = 5–10% besparing.' },
+              { emoji: '🏆', title: 'Byt elavtal', desc: 'Det enklaste tipset – byt till billigaste avtal.' },
+            ].map(tip => (
+              <div key={tip.title} style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 14, padding: '20px', boxShadow: C.shadow }}>
+                <span style={{ fontSize: 26, display: 'block', marginBottom: 8 }}>{tip.emoji}</span>
+                <div style={{ fontWeight: 800, fontSize: 15, color: C.text, marginBottom: 4 }}>{tip.title}</div>
+                <div style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.5 }}>{tip.desc}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Link href="/tips" style={{ fontSize: 14, fontWeight: 700, color: C.green, textDecoration: 'none', borderBottom: `2px solid ${C.greenBorder}`, paddingBottom: 2 }}>Se alla 12 spartips →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── GUIDER / BLOGG ── */}
+      <section style={{ padding: '72px 24px', background: C.bg }}>
+        <div style={{ maxWidth: 900, margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 32, flexWrap: 'wrap', gap: 8 }}>
+            <h2 style={{ fontSize: 'clamp(22px, 4vw, 32px)', fontWeight: 900, letterSpacing: '-0.5px' }}>Guider om el &amp; elavtal</h2>
+            <Link href="/blog" style={{ fontSize: 14, fontWeight: 700, color: C.green, textDecoration: 'none' }}>Se alla guider →</Link>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 }}>
+            {blogPosts.slice(0, 3).map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                <article style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 16, padding: '22px', boxShadow: C.shadow, height: '100%', display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, background: C.greenLight, color: C.greenText, borderRadius: 999, padding: '3px 10px', display: 'inline-block', marginBottom: 12 }}>{post.category}</span>
+                  <h3 style={{ fontSize: 16, fontWeight: 800, color: C.text, lineHeight: 1.35, marginBottom: 8, flex: 1 }}>{post.title}</h3>
+                  <p style={{ fontSize: 13, color: C.textMuted, lineHeight: 1.55, marginBottom: 12 }}>{post.description.slice(0, 90)}…</p>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: C.green }}>Läs guide →</span>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{ padding: '72px 24px', background: C.bgMuted, borderTop: `1px solid ${C.border}` }}>
+        <div style={{ maxWidth: 700, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 40 }}>
+            <h2 style={{ fontSize: 'clamp(22px, 4vw, 32px)', fontWeight: 900, letterSpacing: '-0.5px', marginBottom: 10 }}>Vanliga frågor om elavtal</h2>
+            <p style={{ fontSize: 16, color: C.textMuted }}>Svar på det du undrar över.</p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {([
+              { q: 'Hur jämför jag elavtal?', a: 'Ange ditt postnummer och din årsförbrukning (finns på elfakturan) i formuläret ovan. Vi hämtar alla tillgängliga avtal från Energimarknadsinspektionens databas och sorterar dem billigast först – helt gratis.' },
+              { q: 'Vad är skillnaden mellan timpris och fast pris?', a: 'Timpris innebär att du betalar marknadens elpris varje timme – det varierar hela dygnet. Fast pris låser din elproduktionskostnad under avtalsperioden (1–3 år). Rörligt pris är historiskt billigare i snitt, men innebär mer osäkerhet.' },
+              { q: 'Kostar det något att byta elavtal?', a: 'Nej, det är helt gratis att byta elavtal i Sverige. Det är en lagstadgad rättighet. Din nya leverantör hanterar bytet åt dig – du behöver inte säga upp det gamla avtalet själv.' },
+              { q: 'Hur lång är uppsägningstiden?', a: 'De flesta rörliga avtal har 1 månads uppsägningstid. Fasta avtal (1–3 år) kan ha längre bindningstid. Kolla ditt avtal under "Villkor" eller kontakta din nuvarande leverantör.' },
+              { q: 'Vad ingår i det totala elpriset?', a: 'Det totala elpriset består av: (1) elproduktion – det pris du jämför, (2) elnätsavgift till ditt nätbolag (kan inte väljas bort), och (3) statlig elskatt (54,875 öre/kWh 2025). Allt beräknas inklusive 25% moms.' },
+              { q: 'Hur ofta bör jag jämföra elavtal?', a: 'Minst en gång per år – och alltid när ditt avtal är på väg att löpa ut. Med Elblixten tar en jämförelse bara 30 sekunder.' },
+              { q: 'Är grön el bättre för miljön?', a: 'Grön el innebär att din leverantör köper ursprungsgarantier för förnybar energi. Bra Miljöval-certifierade avtal ställer hårdare krav. I Sverige är elnätet redan relativt rent (~45% vattenkraft, ~30% kärnkraft).' },
+            ] as { q: string; a: string }[]).map((item, i) => (
+              <div key={i} style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 12, overflow: 'hidden', boxShadow: C.shadow }}>
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  style={{ width: '100%', textAlign: 'left', padding: '18px 20px', background: 'none', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, fontWeight: 700, fontSize: 15, color: C.text }}
+                >
+                  {item.q}
+                  <span style={{ flexShrink: 0, fontSize: 20, color: C.textMuted, transform: openFaq === i ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s', display: 'inline-block' }}>+</span>
+                </button>
+                <AnimatePresence initial={false}>
+                  {openFaq === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.22 }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <div style={{ padding: '0 20px 18px', fontSize: 15, color: C.textMuted, lineHeight: 1.65 }}>{item.a}</div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── ADMIN MODAL ── */}
       <AnimatePresence>
         {showAdmin && (
@@ -462,12 +573,18 @@ export default function Home() {
       </AnimatePresence>
 
       {/* ── FOOTER ── */}
-      <footer style={{ borderTop: `1px solid ${C.border}`, padding: '32px 24px', textAlign: 'center', color: C.textLight, fontSize: 13 }}>
+      <footer style={{ borderTop: `1px solid ${C.border}`, padding: '40px 24px', textAlign: 'center', color: C.textLight, fontSize: 13, background: C.bg }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <div className="flex items-center justify-center mb-3">
+          <div className="flex items-center justify-center mb-4">
             <img src="/logo.png" alt="Elblixten" style={{ height: 40, opacity: 0.6 }} />
           </div>
-          <p>Ingen ansvarighet för prisuppgifternas aktualitet. Konsultera alltid elnätsleverantören direkt.</p>
+          <nav style={{ display: 'flex', justifyContent: 'center', gap: 24, marginBottom: 16, flexWrap: 'wrap' }}>
+            <Link href="/" style={{ color: C.textMuted, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>Jämför elavtal</Link>
+            <Link href="/tips" style={{ color: C.textMuted, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>Spartips</Link>
+            <Link href="/blog" style={{ color: C.textMuted, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>Guider</Link>
+          </nav>
+          <p style={{ marginBottom: 4 }}>Prisuppgifter från Energimarknadsinspektionen. Ingen ansvarighet för aktualitet.</p>
+          <p>© 2025 Elblixten – Gratis jämförelsetjänst för elavtal i Sverige.</p>
         </div>
       </footer>
     </div>

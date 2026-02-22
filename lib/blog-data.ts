@@ -183,7 +183,6 @@ export const blogPosts: BlogPost[] = [
 <p>Även om du inte kan påverka elnät eller skatter kan du spara mycket på elproduktionsdelen. Skillnaden mellan bästa och sämsta avtal är ofta 20–40 öre/kWh – det är 4 000–8 000 kr/år för en villa med elvärme. Jämför nu på vår <a href="/">startsida</a>.</p>
     `,
   },
-];
 
   // ── NYA GUIDER ──
   {

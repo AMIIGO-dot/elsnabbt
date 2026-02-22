@@ -222,7 +222,7 @@ export const blogPosts: BlogPost[] = [
     `,
   },
   {
-    slug: 'elvärme-elforbrukning-villa',
+    slug: 'elvarme-elforbrukning-villa',
     title: 'Elvärme i villa – hur mycket el använder du egentligen?',
     description: 'Allt om elvärme i villa: typisk årsförbrukning, hur du minskar kostnaderna och vilket elavtal som passar bäst för ett hus med direktverkande el.',
     category: 'Förstå elpriset',

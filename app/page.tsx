@@ -20,6 +20,7 @@ export default function Home() {
   const [showAdmin, setShowAdmin] = useState(false);
   const [adminPass, setAdminPass] = useState('');
   const [adminUnlocked, setAdminUnlocked] = useState(false);
+  const [showHousing, setShowHousing] = useState(false);
 
   const avtalstyper = [
     { key: 'TIMPRIS',       label: 'Timpris',      desc: 'Följer börsen per timme' },
@@ -198,14 +199,59 @@ export default function Home() {
               max={50000}
               step={500}
               value={kwh}
-              onChange={e => setKwh(Number(e.target.value))}
+              onChange={e => { setKwh(Number(e.target.value)); setShowHousing(false); }}
               style={{ width: '100%', accentColor: C.green }}
             />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, color: C.textLight, marginTop: 4 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, color: C.textLight, marginTop: 8 }}>
               <span>1 000 kWh</span>
-              <span>Villa ~20 000</span>
+              <button
+                onClick={() => setShowHousing(v => !v)}
+                style={{ fontSize: 12, fontWeight: 700, color: C.green, background: 'none', border: 'none', cursor: 'pointer', textDecoration: 'underline', padding: 0 }}
+              >
+                {showHousing ? 'Dölj guide' : 'Hjälp, jag vet inte!'}
+              </button>
               <span>50 000 kWh</span>
             </div>
+
+            {/* Housing picker */}
+            <AnimatePresence>
+              {showHousing && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.25 }}
+                  style={{ overflow: 'hidden' }}
+                >
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginTop: 16 }}>
+                    {[
+                      { label: 'Lägenhet', kwh: 2000, emoji: '🏢', desc: '2 000 kWh/år' },
+                      { label: 'Villa', kwh: 5000, emoji: '🏠', desc: '5 000 kWh/år' },
+                      { label: 'Villa med elvärme', kwh: 20000, emoji: '🔌', desc: '20 000 kWh/år' },
+                    ].map(opt => {
+                      const selected = kwh === opt.kwh;
+                      return (
+                        <button
+                          key={opt.label}
+                          onClick={() => { setKwh(opt.kwh); setShowHousing(false); }}
+                          style={{
+                            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
+                            padding: '14px 8px', borderRadius: 12, cursor: 'pointer', transition: 'all 0.15s',
+                            background: selected ? C.greenLight : C.bgMuted,
+                            border: `2px solid ${selected ? C.green : C.border}`,
+                            boxShadow: selected ? '0 2px 8px rgba(21,128,61,0.2)' : 'none',
+                          }}
+                        >
+                          <span style={{ fontSize: 26 }}>{opt.emoji}</span>
+                          <span style={{ fontSize: 12, fontWeight: 800, color: selected ? C.greenText : C.text }}>{opt.label}</span>
+                          <span style={{ fontSize: 11, color: C.textMuted, fontWeight: 600 }}>{opt.desc}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
           {/* Sök-knapp */}

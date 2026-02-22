@@ -1,17 +1,32 @@
-export type Offer = {
-  id: number;
+export type ScrapedOffer = {
+  id?: number;
+  leverantorId?: number;
   leverantor: string;
   avtalNamn: string;
-  typ: 'fast' | 'rörligt' | 'timpris';
-  paslagOre: number; // påslag öre/kWh
-  fastAvgift: number; // kr/mån
-  bindningManader: number;
+  prisOre?: number;
+  totalAr: number;
+  totalMan: number;
+  besparing: number;
+  typ: string;
   gron: boolean;
+  braMiljoval?: boolean;
+  sol?: boolean;
+  vind?: boolean;
+  vatten?: boolean;
+  bio?: boolean;
+  karnkraft?: boolean;
+  energiKalla?: string;
+  uppsTid?: string;
+  uppsTidRaw?: number;
+  uppsTidEnhet?: string;
   kampanj: string;
-  logo: string; // url till logga eller placeholder
-};
-
-export type PostnrData = {
-  elArea: 'SE1' | 'SE2' | 'SE3' | 'SE4';
-  natavgiftAr: number; // uppskattad nätavgift per år
+  nyttaKunder?: boolean;
+  betalning?: string;
+  fakturering?: string;
+  kwh?: number;
+  elArea?: string;
+  leverantorUrl?: string;
+  leverantorTelefon?: string;
+  leverantorEpost?: string;
+  källa: 'live' | 'scrape' | 'beräknad';
 };

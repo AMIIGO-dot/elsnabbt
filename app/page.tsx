@@ -522,6 +522,7 @@ export default function Home() {
             <Link href="/blog" style={{ color: C.textMuted, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>Guider</Link>
           </nav>
           <p style={{ marginBottom: 4 }}>Prisuppgifter från Energimarknadsinspektionen. Ingen ansvarighet för aktualitet.</p>
+          <p style={{ marginBottom: 4 }}>Kontakt: <a href="mailto:hej@elblixten.se" style={{ color: C.textMuted, textDecoration: 'none' }}>hej@elblixten.se</a></p>
           <p>© 2025 Elblixten – Gratis jämförelsetjänst för elavtal i Sverige.</p>
         </div>
       </footer>

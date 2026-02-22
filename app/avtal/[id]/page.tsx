@@ -103,7 +103,7 @@ export default function AvtalPage() {
             Tillbaka
           </button>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Elblixten" style={{ height: 34 }} />
+            <img src="/logo.png" alt="Elblixten" style={{ height: 52 }} />
           </div>
         </div>
       </header>

@@ -85,7 +85,7 @@ export default function Home() {
       <header style={{ borderBottom: `1px solid ${C.border}`, background: 'rgba(249,247,242,0.92)', backdropFilter: 'blur(16px)', position: 'sticky', top: 0, zIndex: 50 }}>
         <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center">
-            <img src="/logo.png" alt="Elblixten" style={{ height: 38 }} />
+            <img src="/logo.png" alt="Elblixten" style={{ height: 56 }} />
           </div>
           <button
             onClick={() => setShowAdmin(!showAdmin)}
@@ -419,7 +419,7 @@ export default function Home() {
       <footer style={{ borderTop: `1px solid ${C.border}`, padding: '32px 24px', textAlign: 'center', color: C.textLight, fontSize: 13 }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div className="flex items-center justify-center mb-3">
-            <img src="/logo.png" alt="Elblixten" style={{ height: 28, opacity: 0.6 }} />
+            <img src="/logo.png" alt="Elblixten" style={{ height: 40, opacity: 0.6 }} />
           </div>
           <p>Ingen ansvarighet för prisuppgifternas aktualitet. Konsultera alltid elnätsleverantören direkt.</p>
         </div>

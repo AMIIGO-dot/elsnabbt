@@ -19,9 +19,6 @@ export default function Home() {
   const [dataSource, setDataSource] = useState('');
   const [hämtadTid, setHämtadTid] = useState('');
   const [prisTypNote, setPrisTypNote] = useState('');
-  const [showAdmin, setShowAdmin] = useState(false);
-  const [adminPass, setAdminPass] = useState('');
-  const [adminUnlocked, setAdminUnlocked] = useState(false);
   const [showHousing, setShowHousing] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -105,12 +102,6 @@ export default function Home() {
           <nav style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
             <Link href="/tips" style={{ fontSize: 14, fontWeight: 600, color: C.textMuted, textDecoration: 'none' }}>Tips</Link>
             <Link href="/blog" style={{ fontSize: 14, fontWeight: 600, color: C.textMuted, textDecoration: 'none' }}>Guider</Link>
-            <button
-              onClick={() => setShowAdmin(!showAdmin)}
-              style={{ fontSize: 13, color: C.textMuted, background: C.bgMuted, border: `1px solid ${C.border}`, borderRadius: 8, padding: '6px 14px', cursor: 'pointer', fontWeight: 600 }}
-            >
-              Admin
-            </button>
           </nav>
         </div>
       </header>
@@ -518,59 +509,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── ADMIN MODAL ── */}
-      <AnimatePresence>
-        {showAdmin && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={e => { if (e.target === e.currentTarget) setShowAdmin(false); }}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              style={{ background: C.bgCard, border: `1px solid ${C.border}`, borderRadius: 20, padding: 32, maxWidth: 440, width: '100%', boxShadow: '0 20px 60px rgba(0,0,0,0.2)' }}
-              onClick={e => e.stopPropagation()}
-            >
-              <h2 style={{ fontSize: 20, fontWeight: 900, marginBottom: 20, color: C.text }}>Admin</h2>
-              {!adminUnlocked ? (
-                <div>
-                  <input
-                    type="password"
-                    placeholder="Lösenord"
-                    value={adminPass}
-                    onChange={e => setAdminPass(e.target.value)}
-                    onKeyDown={e => { if (e.key === 'Enter' && adminPass === 'admin123') setAdminUnlocked(true); }}
-                    style={{ width: '100%', padding: '12px 14px', borderRadius: 10, border: `1.5px solid ${C.border}`, fontSize: 15, marginBottom: 12, boxSizing: 'border-box', background: C.bg }}
-                  />
-                  <button
-                    onClick={() => { if (adminPass === 'admin123') setAdminUnlocked(true); else alert('Fel lösenord'); }}
-                    style={{ width: '100%', padding: 12, background: C.green, color: '#fff', border: 'none', borderRadius: 10, fontWeight: 700, cursor: 'pointer' }}
-                  >
-                    Logga in
-                  </button>
-                </div>
-              ) : (
-                <div>
-                  <p style={{ color: C.textMuted, fontSize: 14, marginBottom: 16 }}>
-                    Du är inloggad som admin.
-                  </p>
-                  <button
-                    onClick={() => { setAdminUnlocked(false); setShowAdmin(false); setAdminPass(''); }}
-                    style={{ padding: '8px 18px', background: C.bgMuted, border: `1px solid ${C.border}`, borderRadius: 8, cursor: 'pointer', fontWeight: 600, color: C.text }}
-                  >
-                    Stäng
-                  </button>
-                </div>
-              )}
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* ── FOOTER ── */}
       <footer style={{ borderTop: `1px solid ${C.border}`, padding: '40px 24px', textAlign: 'center', color: C.textLight, fontSize: 13, background: C.bg }}>

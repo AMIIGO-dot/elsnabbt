@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f9f7f2;
+  color: #1c1917;
+}
+
+/* Custom range slider */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  background: #d6d0c4;
+  border-radius: 999px;
+  height: 5px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #15803d;
+  border: 2.5px solid #ffffff;
+  margin-top: -7.5px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18), 0 0 0 3px rgba(21,128,61,0.15);
+  transition: box-shadow 0.15s;
+}
+input[type='range']:hover::-webkit-slider-thumb {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18), 0 0 0 6px rgba(21,128,61,0.12);
+}

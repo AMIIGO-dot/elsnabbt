@@ -127,7 +127,7 @@ export async function GET(request: NextRequest) {
   const medianOre = sorted[Math.floor(sorted.length / 2)]?.AvtalJamforPris ?? sorted[0].AvtalJamforPris;
   const medianAr  = Math.round((((medianOre + ELSKATT) * kwh) / 100) * 1.25 + natKr);
 
-  const offers = sorted.slice(0, 20).map(c => {
+  const offers = sorted.map(c => {
     const totalAr  = Math.round((((c.AvtalJamforPris + ELSKATT) * kwh) / 100) * 1.25 + natKr);
     const besparing = Math.max(0, medianAr - totalAr);
     const uppsTid  = c.AvtalUppsagningstid === 0

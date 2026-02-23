@@ -13,10 +13,14 @@ const TYP_MAP: Record<string, number[]> = {
 
 function postnrToElArea(postnr: string): string {
   const n = parseInt(postnr);
-  if (n >= 90000) return 'SE1';
-  if (n >= 80000) return 'SE2';
-  if (n >= 60000) return 'SE3';
-  return 'SE4';
+  if (n >= 90000) return 'SE1'; // Norrbotten + Västerbotten
+  if (n >= 80000) return 'SE2'; // Gävleborg, Dalarna, Jämtland, Västernorrland
+  // SE4: Skåne (20xxx–29xxx), södra Småland/Blekinge/Kalmar (35xxx–39xxx), Gotland (62xxx)
+  const p = Math.floor(n / 1000); // första 2 siffrorna
+  if (p >= 20 && p <= 29) return 'SE4'; // Skåne
+  if (p >= 35 && p <= 39) return 'SE4'; // Kronoberg, Blekinge, Kalmar, Öland
+  if (p === 62)            return 'SE4'; // Gotland
+  return 'SE3'; // Stockholm, Göteborg, Mälardalen, Halland, Värmland m.m.
 }
 
 // Schablonvärde för elnätsavgift per år inkl moms

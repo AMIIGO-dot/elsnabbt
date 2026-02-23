@@ -83,6 +83,8 @@ export async function GET(request: NextRequest) {
   const postnr   = request.nextUrl.searchParams.get('postnr') ?? '';
   const kwh      = parseInt(request.nextUrl.searchParams.get('kwh') ?? '15000');
   const typParam = (request.nextUrl.searchParams.get('typ') ?? 'TIMPRIS').toUpperCase();
+  const kundtyp  = request.nextUrl.searchParams.get('kundtyp') === 'foretag' ? 'foretag' : 'privat';
+  const kundkategori = kundtyp === 'foretag' ? 2 : 1;
 
   if (postnr.length !== 5 || !/^\d{5}$/.test(postnr)) {
     return NextResponse.json({ error: 'Ogiltigt postnummer' }, { status: 400 });
@@ -93,7 +95,7 @@ export async function GET(request: NextRequest) {
   const natKr  = natAvgiftAr(elArea);
 
   // Hämta avtal + leverantörsinfo parallellt
-  const apiUrl = `https://www1.ei.se/elinservices/api/json/SokAvtal?postNummer=${postnr}&forbrukning=${kwh}`;
+  const apiUrl = `https://www1.ei.se/elinservices/api/json/SokAvtal?postNummer=${postnr}&forbrukning=${kwh}&kundkategori=${kundkategori}`;
   const [res, suppliersRes] = await Promise.all([
     fetch(apiUrl, { headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0' }, next: { revalidate: 3600 } }),
     fetch('https://www1.ei.se/elinservices/api/json/GetElleverantorer', { headers: { Accept: 'application/json' }, next: { revalidate: 86400 } }),

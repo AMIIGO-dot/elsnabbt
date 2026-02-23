@@ -8,6 +8,7 @@ export type ScrapedOffer = {
   totalMan: number;
   besparing: number;
   typ: string;
+  kundtyp?: 'privat' | 'foretag';
   gron: boolean;
   braMiljoval?: boolean;
   sol?: boolean;

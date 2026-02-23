@@ -14,6 +14,7 @@ export default function Home() {
   const [kwh, setKwh] = useState(15000);
   const [results, setResults] = useState<ScrapedOffer[]>([]);
   const [avtalstyp, setAvtalstyp] = useState('KVARTSPRIS');
+  const [kundtyp, setKundtyp] = useState<'privat' | 'foretag'>('privat');
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const [dataSource, setDataSource] = useState('');
@@ -35,7 +36,7 @@ export default function Home() {
     setLoading(true);
     setSearched(false);
     try {
-      const res = await fetch(`/api/compare?postnr=${postnr}&kwh=${kwh}&typ=${encodeURIComponent(avtalstyp)}`);
+      const res = await fetch(`/api/compare?postnr=${postnr}&kwh=${kwh}&typ=${encodeURIComponent(avtalstyp)}&kundtyp=${kundtyp}`);
       const data = await res.json();
       if (data.error) throw new Error(data.error);
       const offers: ScrapedOffer[] = data.offers ?? [];
@@ -166,6 +167,30 @@ export default function Home() {
                 transition: 'border-color 0.2s', boxSizing: 'border-box',
               }}
             />
+          </div>
+
+          {/* Kundtyp */}
+          <div style={{ marginBottom: 28 }}>
+            <label style={{ display: 'block', fontSize: 13, fontWeight: 700, color: C.textMuted, marginBottom: 10, letterSpacing: '0.02em', textTransform: 'uppercase' }}>
+              Jag är
+            </label>
+            <div style={{ display: 'flex', gap: 8 }}>
+              {([{ key: 'privat', label: 'Privatperson' }, { key: 'foretag', label: 'Företag' }] as const).map(k => (
+                <button
+                  key={k.key}
+                  onClick={() => setKundtyp(k.key)}
+                  style={{
+                    flex: 1, padding: '10px 16px', fontSize: 14, fontWeight: 700, borderRadius: 10, cursor: 'pointer', transition: 'all 0.15s',
+                    background: kundtyp === k.key ? C.green : C.bgMuted,
+                    color: kundtyp === k.key ? '#fff' : C.text,
+                    border: `1.5px solid ${kundtyp === k.key ? C.green : C.border}`,
+                    boxShadow: kundtyp === k.key ? '0 2px 8px rgba(21,128,61,0.25)' : 'none',
+                  }}
+                >
+                  {k.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Avtalstyp */}

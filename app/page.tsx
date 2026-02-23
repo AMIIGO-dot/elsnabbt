@@ -422,7 +422,10 @@ export default function Home() {
                           )}
                           <div style={{ textAlign: 'right' }}>
                             {offer.prisOre !== undefined && (
-                              <div style={{ fontSize: 12, color: C.green, fontWeight: 700, marginBottom: 2 }}>{offer.prisOre.toFixed(2)} öre/kWh</div>
+                              <>
+                                <div style={{ fontSize: 12, color: C.green, fontWeight: 700, marginBottom: 1 }}>{(offer.prisOre + 68.59).toFixed(2)} öre/kWh</div>
+                                <div style={{ fontSize: 10, color: C.textLight, marginBottom: 4 }}>inkl. elskatt & moms</div>
+                              </>
                             )}
                             <div style={{ fontSize: 12, color: C.textMuted, fontWeight: 600 }}>Per månad</div>
                             <div style={{ fontSize: 18, fontWeight: 900, color: C.text }}>{offer.totalMan.toLocaleString('sv-SE')} kr</div>
@@ -435,7 +438,7 @@ export default function Home() {
                   </div>
 
                   <p style={{ textAlign: 'center', fontSize: 12, color: C.textLight, marginTop: 24, lineHeight: 1.6 }}>
-                    Priser inkl. moms, elnätsavgift och elskatt. Baseras på din angivna förbrukning och aktuellt spotpris.
+                    Örespriset inkl. elskatt och moms (exkl. elnätsavgift). Månadskostnaden inkluderar även elnätsavgift. Data från Energimarknadsinspektionen.
                   </p>
                 </>
               )}

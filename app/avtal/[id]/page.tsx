@@ -148,13 +148,16 @@ export default function AvtalPage() {
         {/* PRIS BIG */}
         <div style={{ background: C.bgCard, border: `2px solid ${C.green}`, borderRadius: 20, padding: '28px 32px', marginBottom: 16, boxShadow: '0 4px 20px rgba(21,128,61,0.1)' }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: C.textMuted, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 6 }}>
-            Jämförpris
+            Totalpris
           </div>
           <div style={{ fontSize: 'clamp(36px, 5vw, 52px)', fontWeight: 900, color: C.green, letterSpacing: '-1px', lineHeight: 1.1 }}>
-            {offer.prisOre?.toFixed(2)} <span style={{ fontSize: 18, fontWeight: 700, color: C.textMuted }}>öre/kWh</span>
+            {totaltInklMoms.toFixed(2)} <span style={{ fontSize: 18, fontWeight: 700, color: C.textMuted }}>öre/kWh</span>
           </div>
-          <div style={{ fontSize: 13, color: C.textLight, marginTop: 8 }}>
-            Räknat på {kwh.toLocaleString('sv-SE')} kWh/år
+          <div style={{ fontSize: 13, color: C.textLight, marginTop: 6 }}>
+            inkl. moms &amp; elskatt
+          </div>
+          <div style={{ fontSize: 12, color: C.textLight, marginTop: 4, background: C.bgMuted, borderRadius: 8, padding: '6px 10px', display: 'inline-block' }}>
+            Elbolagets jämförpris: {offer.prisOre?.toFixed(2)} öre/kWh (exkl. elskatt)
           </div>
 
           <div style={{ display: 'flex', gap: 32, marginTop: 20, flexWrap: 'wrap' }}>
@@ -172,12 +175,12 @@ export default function AvtalPage() {
         </div>
 
         {/* PRISUPPDELNING */}
-        <Section title="Det här ingår i jämförpriset">
-          <Row label="Elpris inkl. moms (jämförpris)" value={`${prisInklMoms.toFixed(2)} öre/kWh`} />
-          <Row label={`Elskatt (${ELSKATT.toFixed(3)} öre/kWh × 1,25 moms)`} value={`${elskatInklMoms.toFixed(2)} öre/kWh`} />
-          <Row label="Totalt inkl. moms" value={`${totaltInklMoms.toFixed(2)} öre/kWh`} highlight />
+        <Section title="Prisuppdelning per kWh">
+          <Row label="Elbolagets pris inkl. moms" value={`${prisInklMoms.toFixed(2)} öre/kWh`} />
+          <Row label={`Statlig elskatt inkl. moms (${ELSKATT.toFixed(3)} × 1,25)`} value={`${elskatInklMoms.toFixed(2)} öre/kWh`} />
+          <Row label="Elpris + elskatt inkl. moms" value={`${totaltInklMoms.toFixed(2)} öre/kWh`} highlight />
           <p style={{ fontSize: 12, color: C.textLight, marginTop: 12, lineHeight: 1.6 }}>
-            * Elnätsavgiften ({(offer.elArea === 'SE1' ? 7200 : offer.elArea === 'SE2' ? 8100 : offer.elArea === 'SE4' ? 11700 : 9900).toLocaleString('sv-SE')} kr/år för {offer.elArea}) ingår inte i örespriset men är inräknat i månadskostnaden ovan.
+            Elnätsavgiften ({(offer.elArea === 'SE1' ? 7200 : offer.elArea === 'SE2' ? 8100 : offer.elArea === 'SE4' ? 11700 : 9900).toLocaleString('sv-SE')} kr/år för {offer.elArea}) tillkommer och ingår i månadskostnaden ovan men syns inte i örespriset — den beror på ditt lokala nätbolag och kan inte väljas bort.
           </p>
         </Section>
 

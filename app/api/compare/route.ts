@@ -127,13 +127,17 @@ export async function GET(request: NextRequest) {
   // Sortera på jämförpris (lägst öre/kWh först)
   const sorted = [...filtered].sort((a, b) => a.AvtalJamforPris - b.AvtalJamforPris);
 
-  // Beräkna ungefärlig totalkostnad per år inkl elnät, elskatt (54,875 öre/kWh), moms (25 %)
+  // Beräkna totalkostnad per år.
+  // AvtalJamforPris är redan inkl. moms (25%).
+  // Elskatt (54,875 öre/kWh) är exkl. moms → multipliceras med 1,25.
+  // Nätavgift antas inkl. moms.
   const ELSKATT = 54.875;
+  const ELSKATT_INKL_MOMS = ELSKATT * 1.25; // 68,594 öre/kWh
   const medianOre = sorted[Math.floor(sorted.length / 2)]?.AvtalJamforPris ?? sorted[0].AvtalJamforPris;
-  const medianAr  = Math.round((((medianOre + ELSKATT) * kwh) / 100) * 1.25 + natKr);
+  const medianAr  = Math.round(((medianOre + ELSKATT_INKL_MOMS) * kwh) / 100 + natKr);
 
   const offers = sorted.map(c => {
-    const totalAr  = Math.round((((c.AvtalJamforPris + ELSKATT) * kwh) / 100) * 1.25 + natKr);
+    const totalAr  = Math.round(((c.AvtalJamforPris + ELSKATT_INKL_MOMS) * kwh) / 100 + natKr);
     const besparing = Math.max(0, medianAr - totalAr);
     const uppsTid  = c.AvtalUppsagningstid === 0
       ? 'Löpande'

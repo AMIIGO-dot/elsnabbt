@@ -73,10 +73,11 @@ export default function AvtalPage() {
   }
 
   const kwh = offer.kwh ?? 15000;
-  const exklSkatt = offer.prisOre ?? 0;
-  const inklSkatt = exklSkatt + ELSKATT;
-  const moms = inklSkatt * 0.25;
-  const totaltInklMoms = inklSkatt + moms;
+  // offer.prisOre (AvtalJamforPris) är redan inkl. moms (25%)
+  const prisInklMoms = offer.prisOre ?? 0;
+  // Elskatt är exkl. moms → lägg på 25%
+  const elskatInklMoms = ELSKATT * 1.25;
+  const totaltInklMoms = prisInklMoms + elskatInklMoms;
 
   const typLabel: Record<string, string> = {
     timpris: 'Rörligt timpris',
@@ -172,10 +173,8 @@ export default function AvtalPage() {
 
         {/* PRISUPPDELNING */}
         <Section title="Det här ingår i jämförpriset">
-          <Row label="Avtalets elpris" value={`${exklSkatt.toFixed(2)} öre/kWh`} />
-          <Row label="Elskatt" value={`${ELSKATT.toFixed(3)} öre/kWh`} />
-          <Row label="Summa exkl. moms" value={`${inklSkatt.toFixed(2)} öre/kWh`} />
-          <Row label="Moms (25 %)" value={`${moms.toFixed(2)} öre/kWh`} />
+          <Row label="Elpris inkl. moms (jämförpris)" value={`${prisInklMoms.toFixed(2)} öre/kWh`} />
+          <Row label={`Elskatt (${ELSKATT.toFixed(3)} öre/kWh × 1,25 moms)`} value={`${elskatInklMoms.toFixed(2)} öre/kWh`} />
           <Row label="Totalt inkl. moms" value={`${totaltInklMoms.toFixed(2)} öre/kWh`} highlight />
           <p style={{ fontSize: 12, color: C.textLight, marginTop: 12, lineHeight: 1.6 }}>
             * Elnätsavgiften ({(offer.elArea === 'SE1' ? 7200 : offer.elArea === 'SE2' ? 8100 : offer.elArea === 'SE4' ? 11700 : 9900).toLocaleString('sv-SE')} kr/år för {offer.elArea}) ingår inte i örespriset men är inräknat i månadskostnaden ovan.

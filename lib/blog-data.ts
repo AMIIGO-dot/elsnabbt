@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 5,
     content: `
 <h2>Vad är timpris?</h2>
-<p>Med ett timprisavtal betalar du ett pris som förändras varje timme baserat på elbörsen Nord Pool. Priset sätts dagen innan och visas ofta i appar som Tibber eller via din elleverantör. Under lågtrafiktimmarna (natt, helger) är priset ofta lågt, medan effekttoppar mitt på dagen kan ge höga priser.</p>
+<p>Med ett timprisavtal betalar du ett pris som förändras varje timme baserat på elbörsen <a href="https://www.nordpoolgroup.com" target="_blank" rel="noopener noreferrer">Nord Pool</a>. Priset sätts dagen innan och visas ofta i appar som Tibber eller via din elleverantör. Under lågtrafiktimmarna (natt, helger) är priset ofta lågt, medan effekttoppar mitt på dagen kan ge höga priser.</p>
 <p><strong>Timpris passar dig som:</strong></p>
 <ul>
   <li>Kan flytta förbrukning till billiga timmar (ladda bil, diska, tvätta på natten)</li>
@@ -95,7 +95,7 @@ export const blogPosts: BlogPost[] = [
 <p>Det är viktigt att förstå att <strong>fysisk el från ett vindkraftverk inte flödar direkt till ditt uttag</strong>. Det svenska elnätet blandar all el oberoende av källa. Det du betalar för är en "pappersgaranti" att lika mycket förnybar el produceras som du förbrukar.</p>
 
 <h2>Bra Miljöval – den strängaste märkningen</h2>
-<p>Naturskyddsföreningens märkning Bra Miljöval ställer hårdare krav än vanliga ursprungsgarantier. Elleverantören måste bland annat:</p>
+<p><a href="https://www.naturskyddsforeningen.se/vad-vi-gor/miljomarkning/bra-miljoval/" target="_blank" rel="noopener noreferrer">Naturskyddsföreningens märkning Bra Miljöval</a> ställer hårdare krav än vanliga ursprungsgarantier. Elleverantören måste bland annat:</p>
 <ul>
   <li>Investera en andel av intäkterna i ny förnybar produktion</li>
   <li>Inte köpa el från äldre vattenkraft som påverkar biologisk mångfald</li>
@@ -139,7 +139,7 @@ export const blogPosts: BlogPost[] = [
 <p>Din nya elleverantör kontaktar nätbolaget och sköter bytet åt dig. Du behöver <strong>inte</strong> kontakta din gamla leverantör – det görs automatiskt. Byten tar normalt 1–4 veckor.</p>
 
 <h2>Kostar det att byta?</h2>
-<p>Nej, det är <strong>helt gratis</strong> att byta elavtal i Sverige. Det är en lagstadgad rättighet. Om en leverantör hävdar något annat – välj en annan.</p>
+<p>Nej, det är <strong>helt gratis</strong> att byta elavtal i Sverige. Det är en <a href="https://www.konsumentverket.se/for-konsumenter/el-gas-och-vatten/" target="_blank" rel="noopener noreferrer">lagstadgad rättighet</a>. Om en leverantör hävdar något annat – välj en annan.</p>
 
 <h2>När bör jag byta?</h2>
 <p>Experter rekommenderar att du jämför elavtal minst en gång per år, eller när ditt nuvarande avtal löper ut. Priserna förändras ständigt och det bästa avtalet i dag kan vara ett av de sämsta nästa år.</p>
@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>Elskatt</h2>
-<p>En statlig skatt på all el du förbrukar. 2025 är den <strong>54,875 öre/kWh</strong> i södra Sverige (54,875 öre/kWh i norra är lägre p.g.a. subventioner). Den ingår alltid i ditt totala pris.</p>
+<p>En statlig skatt på all el du förbrukar. 2025 är den <strong>54,875 öre/kWh</strong> i södra Sverige (lägre i norra p.g.a. subventioner). Den ingår alltid i ditt totala pris. Läs mer om elskatt hos <a href="https://www.energimyndigheten.se" target="_blank" rel="noopener noreferrer">Energimyndigheten</a>.</p>
 
 <h2>Moms – 25% på allt</h2>
 <p>Moms läggs på hela beloppet – elproduktionen + elskatt + nätavgift. Det innebär att du betalar 25% moms även på momsen i praktiken.</p>
@@ -208,7 +208,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Hur hittar du billigaste elavtalet för DIG?</h2>
 <p>Det enda sättet att hitta ditt personliga billigaste avtal är att jämföra med ditt exakta postnummer och din förbrukning. Prisskillnaden mellan bästa och sämsta avtal är ofta <strong>20–40 öre/kWh</strong>. Med 20 000 kWh/år är det 4 000–8 000 kr per år.</p>
-<p>Använd vår <a href="/">prisjämförare</a> för att se alla tillgängliga avtal för ditt postnummer och din förbrukning, sorterade billigast först. Data hämtas direkt från Energimarknadsinspektionens databas – alla avtal på marknaden, inget undantag.</p>
+<p>Använd vår <a href="/">prisjämförare</a> för att se alla tillgängliga avtal för ditt postnummer och din förbrukning, sorterade billigast först. Data hämtas direkt från <a href="https://www.ei.se" target="_blank" rel="noopener noreferrer">Energimarknadsinspektionens</a> databas – alla avtal på marknaden, inget undantag.</p>
 
 <h2>Vanliga misstag när du väljer elavtal</h2>
 <ul>
@@ -275,7 +275,7 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 5,
     content: `
 <h2>Vad är kvartspris?</h2>
-<p>Ett kvartsprisavtal innebär att din elleverantör bestämmer priset för nästkommande kvartal (3 månader) baserat på terminspriserna på elbörsen Nord Pool. Priset gäller sedan under hela kvartalet – oavsett hur börsen rör sig under perioden.</p>
+<p>Ett kvartsprisavtal innebär att din elleverantör bestämmer priset för nästkommande kvartal (3 månader) baserat på terminspriserna på elbörsen <a href="https://www.nordpoolgroup.com" target="_blank" rel="noopener noreferrer">Nord Pool</a>. Priset gäller sedan under hela kvartalet – oavsett hur börsen rör sig under perioden.</p>
 <p>Kvartalsskiftena är: <strong>1 januari, 1 april, 1 juli och 1 oktober</strong>. Ditt pris ändras alltså fyra gånger per år.</p>
 
 <h2>Kvartspris vs timpris vs månadsrörligt</h2>
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 6,
     content: `
 <h2>Vad är Nord Pool?</h2>
-<p>Nord Pool är den nordeuropeiska elbörsen där elleverantörer, kraftbolag, industriföretag och handlare köper och säljer el. Börsen är öppen dygnet runt och sätter ett pris för varje timme, nästa dygn (day-ahead-marknaden). Det pris som sätts kallas <strong>spotpriset</strong>.</p>
+<p><a href="https://www.nordpoolgroup.com" target="_blank" rel="noopener noreferrer">Nord Pool</a> är den nordeuropeiska elbörsen där elleverantörer, kraftbolag, industriföretag och handlare köper och säljer el. Börsen är öppen dygnet runt och sätter ett pris för varje timme, nästa dygn (day-ahead-marknaden). Det pris som sätts kallas <strong>spotpriset</strong>.</p>
 <p>Sverige är indelat i fyra elområden (SE1–SE4) och priset kan skilja sig rejält mellan dem – framförallt när det är flaskhalsar i elnätet mellan norr och söder.</p>
 
 <h2>Vad påverkar spotpriset?</h2>
@@ -409,7 +409,7 @@ export const blogPosts: BlogPost[] = [
     content: `
 <h2>Vad är effektavgift?</h2>
 <p>Effektavgift (eller effekttariff) är en del av din elnätsavgift som baseras på din <strong>toppförbrukning</strong> under en viss period – alltså hur mycket el du drar maximalt på en gång, inte hur mycket du förbrukar totalt.</p>
-<p>Fler och fler elnätsbolag (Vattenfall Eldistribution, Ellevio, E.ON Elnät m.fl.) har infört eller planerar att införa effektbaserade tariffer. Energimarknadsinspektionen rekommenderade 2021 att hela branschen ska gå i den riktningen.</p>
+<p>Fler och fler elnätsbolag (Vattenfall Eldistribution, Ellevio, E.ON Elnät m.fl.) har infört eller planerar att införa effektbaserade tariffer. <a href="https://www.ei.se" target="_blank" rel="noopener noreferrer">Energimarknadsinspektionen</a> rekommenderade 2021 att hela branschen ska gå i den riktningen.</p>
 
 <h2>Hur beräknas effektavgiften?</h2>
 <p>De flesta modeller mäter din <strong>timmedelvärdeseffekt</strong> – medelvärdet av din förbrukning under den timme med högst förbrukning. Avgiften baseras därefter på de 3 eller 5 timmar per månad med högst effekt.</p>
@@ -449,7 +449,7 @@ export const blogPosts: BlogPost[] = [
 <p>När din solcellsanläggning producerar mer el än du förbrukar matas överskottet ut på elnätet. Du kan sedan sälja denna el till din elleverantör och/eller via en elhandlare som specialiserar sig på solcellsel.</p>
 <p>Det finns två separata ersättningar att hålla koll på:</p>
 <ol>
-  <li><strong>Skattereduktion (30 öre/kWh)</strong> – Du får 30 öre per kWh som du matar in, dock max 50 000 kWh/år. Detta är ett skatteavdrag, inte en betalning. Det syns i din deklaration.</li>
+  <li><strong><a href="https://www.skatteverket.se/foretagochorganisationer/energiochklimat/mikroproducentavfornybarelkraftmedskattereduktion.4.12815e4f14a62569fa2d54e.html" target="_blank" rel="noopener noreferrer">Skattereduktion</a> (30 öre/kWh)</strong> – Du får 30 öre per kWh som du matar in, dock max 50 000 kWh/år. Detta är ett skatteavdrag, inte en betalning. Det syns i din deklaration.</li>
   <li><strong>Elhandelsersättning</strong> – Din elleverantör betalar dig ett pris för den el du säljer. Priset varierar (typiskt 50–90% av spotpriset).</li>
 </ol>
 
@@ -485,7 +485,7 @@ export const blogPosts: BlogPost[] = [
     readMinutes: 5,
     content: `
 <h2>Kostar det att byta elbolag?</h2>
-<p><strong>Nej – det är alltid gratis</strong> att byta elleverantör i Sverige. Det är en lagstadgad rättighet sedan elmarknaden avreglerades 1996. Inga avgifter, inga dolda kostnader. Om ett företag försöker ta betalt för ett byte – välj ett annat.</p>
+<p><strong>Nej – det är alltid gratis</strong> att byta elleverantör i Sverige. Det är en <a href="https://www.konsumentverket.se/for-konsumenter/el-gas-och-vatten/" target="_blank" rel="noopener noreferrer">lagstadgad rättighet</a> sedan elmarknaden avreglerades 1996. Inga avgifter, inga dolda kostnader. Om ett företag försöker ta betalt för ett byte – välj ett annat.</p>
 <p>Undantag: Om du har ett <em>fast prisavtal</em> med bindningstid och du bryter det i förtid kan du behöva betala en avgift. Läs alltid avtalsvillkoren.</p>
 
 <h2>Hur lång tid tar ett elbyte?</h2>

@@ -475,9 +475,9 @@ export default function Home() {
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {([
-              { q: 'Hur jämför jag elavtal?', a: 'Ange ditt postnummer och din årsförbrukning (finns på elfakturan) i formuläret ovan. Vi hämtar alla tillgängliga avtal från Energimarknadsinspektionens databas och sorterar dem billigast först – helt gratis.' },
+              { q: 'Hur jämför jag elavtal?', a: 'Ange ditt postnummer och din årsförbrukning (finns på elfakturan) i formuläret ovan. Vi hämtar alla tillgängliga avtal från Energimarknadsinspektionens (ei.se) databas och sorterar dem billigast först – helt gratis.' },,
               { q: 'Vad är skillnaden mellan timpris och fast pris?', a: 'Timpris innebär att du betalar marknadens elpris varje timme – det varierar hela dygnet. Fast pris låser din elproduktionskostnad under avtalsperioden (1–3 år). Rörligt pris är historiskt billigare i snitt, men innebär mer osäkerhet.' },
-              { q: 'Kostar det något att byta elavtal?', a: 'Nej, det är helt gratis att byta elavtal i Sverige. Det är en lagstadgad rättighet. Din nya leverantör hanterar bytet åt dig – du behöver inte säga upp det gamla avtalet själv.' },
+              { q: 'Kostar det något att byta elavtal?', a: 'Nej, det är helt gratis att byta elavtal i Sverige (konsumentverket.se). Det är en lagstadgad rättighet. Din nya leverantör hanterar bytet åt dig – du behöver inte säga upp det gamla avtalet själv.' },
               { q: 'Hur lång är uppsägningstiden?', a: 'De flesta rörliga avtal har 1 månads uppsägningstid. Fasta avtal (1–3 år) kan ha längre bindningstid. Kolla ditt avtal under "Villkor" eller kontakta din nuvarande leverantör.' },
               { q: 'Vad ingår i det totala elpriset?', a: 'Det totala elpriset består av: (1) elproduktion – det pris du jämför, (2) elnätsavgift till ditt nätbolag (kan inte väljas bort), och (3) statlig elskatt (54,875 öre/kWh 2025). Allt beräknas inklusive 25% moms.' },
               { q: 'Hur ofta bör jag jämföra elavtal?', a: 'Minst en gång per år – och alltid när ditt avtal är på väg att löpa ut. Med Elblixten tar en jämförelse bara 30 sekunder.' },
@@ -521,7 +521,7 @@ export default function Home() {
             <Link href="/tips" style={{ color: C.textMuted, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>Spartips</Link>
             <Link href="/blog" style={{ color: C.textMuted, textDecoration: 'none', fontWeight: 600, fontSize: 14 }}>Guider</Link>
           </nav>
-          <p style={{ marginBottom: 4 }}>Prisuppgifter från Energimarknadsinspektionen. Ingen ansvarighet för aktualitet.</p>
+          <p style={{ marginBottom: 4 }}>Prisuppgifter från <a href="https://www.ei.se" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>Energimarknadsinspektionen</a>. Ingen ansvarighet för aktualitet.</p>
           <p style={{ marginBottom: 4 }}>Kontakt: <a href="mailto:hej@elblixten.se" style={{ color: C.textMuted, textDecoration: 'none' }}>hej@elblixten.se</a></p>
           <p>© 2026 Elblixten – Gratis jämförelsetjänst för elavtal i Sverige.</p>
         </div>

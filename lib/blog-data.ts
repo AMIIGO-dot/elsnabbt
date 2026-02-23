@@ -515,6 +515,57 @@ export const blogPosts: BlogPost[] = [
 <p>Minst en gång per år. Elleverantörer stiger gradvis med priser på inaktiva kunder. Sätt en återkommande påminnelse i kalendern varje höst och jämför snabbt på vår <a href="/">prisjämförare</a> – det tar 30 sekunder.</p>
     `,
   },
+  {
+    slug: 'miljobilsbonus-elbil-2026',
+    title: 'Ny elbilsbonus från 18 mars 2026 – regler, belopp och krav',
+    description: 'Den 18 mars 2026 öppnar ansökan för den nya elbilspremien. Men reglerna är hårda – inkomstkrav, krav på att bo utanför kollektivtrafiktäta städer och utbetalning månadsvis i tre år.',
+    category: 'Elbil & laddning',
+    publishedAt: '2026-02-23',
+    readMinutes: 6,
+    content: `
+<h2>Vad är den nya elbilsbonusen?</h2>
+<p>Den 18 mars 2026 öppnar ansökan för Sveriges nya elbilspremie – ett statligt stöd för att göra elbilar tillgängliga för hushåll med lägre inkomster utanför storstäderna. Bonusen administreras av <a href="https://www.naturvardsverket.se" target="_blank" rel="noopener noreferrer">Naturvårdsverket</a> och bygger på ett system med månadsvis utbetalning under tre år.</p>
+<p>Observera att det inte handlar om en klumpsumma vid köpet – pengarna betalas ut <strong>månadsvis i 36 månader</strong>.</p>
+
+<h2>Hur mycket kan du få?</h2>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Period</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Grundbelopp</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Starttillägg*</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">18 mars 2026–30 juni 2028</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">46 800 kr (1 300 kr/mån)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">18 000 kr</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Från 1 juli 2028</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">32 400 kr (900 kr/mån)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">10 000 kr</td></tr>
+  </tbody>
+</table>
+<p>*) Starttillägget betalas ut som en engångssumma och gäller hushåll med upp till 50 % av medelinkomsten.</p>
+
+<h2>Hårda krav – är du kvalificerad?</h2>
+<p>Den nya bonusen är <em>betydligt</em> mer restriktiv än den gamla. Alla dessa krav måste vara uppfyllda:</p>
+<ul>
+  <li><strong>Bor i ett kollektivtrafiksvagt område</strong> – Bor du i Stockholm, Göteborg eller Malmö med god kollektivtrafik är du troligen inte berättigad. SCB:s mått avgör det.</li>
+  <li><strong>Inkomstkrav</strong> – Hushållets inkomst får vara max 80 % av medelinkomsten. Ingen i hushållet får betala statlig inkomstskatt – det vill säga ingen i hushållet får ha en annual inkomst över 643 000 kr (2026).</li>
+  <li><strong>Inga elbilar eller laddhybrider sedan tidigare</strong> – Hushållet får inte redan äga en elbil eller laddhybrid.</li>
+  <li><strong>Bilens pris</strong> – Max 450 000 kr. Minimum: bilens pris måste minst motsvara den totala bonussumman. (Tesla Model Y som ny uppfyller inte kravet – som begagnad under 450 000 kr kan den kvala in.)</li>
+  <li><strong>Ny eller begagnad elbil</strong> – Till skillnad från gamla bonusen gäller stödet även begagnade elbilar och privatleasade.</li>
+  <li><strong>Den sökande måste vara registrerad ägare eller brukare</strong> av bilen.</li>
+  <li><strong>Om bilen byter ägare avbryts utbetalningarna.</strong> Har du fått starttillägget och säljer bilen inom ett år krävs det tillbaka.</li>
+</ul>
+
+<h2>Hur ansöker du?</h2>
+<p>Från 18 mars 2026 tar <a href="https://www.naturvardsverket.se" target="_blank" rel="noopener noreferrer">Naturvårdsverket</a> emot ansökningar via bank-ID. Du kan söka bonusen <strong>både före och efter köpet</strong>, men pengarna börjar inte betalas ut förrän köpet och ägarbytet är genomfört.</p>
+
+<h2>Vad innebär en elbil för din elkostnad?</h2>
+<p>En elbil tillför typiskt <strong>1 500–3 000 kWh per år</strong> till ditt hushålls elförbrukning (1 500–2 000 mil körning à 15–20 kWh/mil). Med rätt elavtal kan du minska laddkostnaden rejält:</p>
+<ul>
+  <li><strong>Timprisavtal</strong> – Bäst för elbilsägare. Ladda natten kl. 01–05 när priset är som lägst. Smart laddbox sköter det automatiskt.</li>
+  <li><strong>Kvartspris</strong> – Bra kompromiss utan behov av aktiv styrning.</li>
+  <li><strong>Fast pris</strong> – Sällan optimalt – du kan inte utnyttja de billiga nattimmarna.</li>
+</ul>
+<p>Med 2 000 extra kWh och 30 öre/kWh i prisskillnad natt/dag sparar smart laddning upp till <strong>600 kr per år</strong>. Jämför aktuella elavtal för ditt postnummer på vår <a href="/">prisjämförare</a>.</p>
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

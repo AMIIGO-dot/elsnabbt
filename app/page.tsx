@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const MotionLink = motion(Link);
 import { Leaf, Star, TrendingDown, Lock, Trophy, ChevronRight } from 'lucide-react';
 import type { ScrapedOffer } from '@/lib/types';
 import { blogPosts } from '@/lib/blog-data';
 
 export default function Home() {
-  const router = useRouter();
   const [postnr, setPostnr] = useState('');
   const [kwh, setKwh] = useState(15000);
   const [results, setResults] = useState<ScrapedOffer[]>([]);
@@ -330,12 +330,12 @@ export default function Home() {
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {results.map((offer, i) => (
-                      <motion.div
+                      <MotionLink
                         key={i}
+                        href={offer.id ? `/avtal/${offer.id}` : '#'}
                         initial={{ opacity: 0, x: -16 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: i * 0.05 }}
-                        onClick={() => offer.id && router.push(`/avtal/${offer.id}`)}
                         style={{
                           background: C.bgCard,
                           border: `1.5px solid ${i === 0 ? C.green : C.border}`,
@@ -348,6 +348,8 @@ export default function Home() {
                           gap: 16,
                           flexWrap: 'wrap',
                           cursor: 'pointer',
+                          textDecoration: 'none',
+                          color: 'inherit',
                           transition: 'box-shadow 0.15s, transform 0.15s',
                         }}
                         whileHover={{ boxShadow: C.shadowHover, y: -2 }}
@@ -403,7 +405,7 @@ export default function Home() {
                           </div>
                           <ChevronRight style={{ color: C.textLight, flexShrink: 0 }} />
                         </div>
-                      </motion.div>
+                      </MotionLink>
                     ))}
                   </div>
 

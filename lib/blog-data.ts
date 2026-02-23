@@ -566,6 +566,57 @@ export const blogPosts: BlogPost[] = [
 <p>Med 2 000 extra kWh och 30 öre/kWh i prisskillnad natt/dag sparar smart laddning upp till <strong>600 kr per år</strong>. Jämför aktuella elavtal för ditt postnummer på vår <a href="/">prisjämförare</a>.</p>
     `,
   },
+  {
+    slug: 'varfor-far-jag-faktura-fran-tva-foretag',
+    title: 'Varför får jag faktura från två olika företag för el?',
+    description: 'Får du räkningar från både ett elbolag och ett nätbolag och undrar varför? Så här funkar det – och vad du faktiskt betalar för.',
+    category: 'Grunderna',
+    publishedAt: '2026-02-23',
+    readMinutes: 3,
+    content: `
+<h2>Du betalar alltid till två olika aktörer</h2>
+<p>Det är helt normalt att få <strong>två separata fakturor</strong> för din el – en från ditt <em>elbolag</em> och en från ditt <em>elnätsbolag</em>. De säljer två helt olika saker, och du kan inte välja bort någon av dem.</p>
+
+<h2>Faktura 1: Elbolaget (elhandelsbolaget)</h2>
+<p>Det här är företaget du <em>valt</em> – till exempel Vattenfall, Tibber, Fortum eller något av de hundratals andra elbolagen på marknaden. De säljer dig själva elen (kilowattimmarna). Det är den här kostnaden du påverkar när du jämför och byter elavtal.</p>
+<p>Fakturan innehåller:</p>
+<ul>
+  <li>Elpriset per kWh (rörligt, fast eller timbaserat)</li>
+  <li>Eventuell fast månadsavgift</li>
+  <li>Elskatt (36 öre/kWh exkl. moms fr.o.m. 2026)</li>
+  <li>Moms 25 % på allt ovanstående</li>
+</ul>
+
+<h2>Faktura 2: Elnätsbolaget (nätägaren)</h2>
+<p>Det här är företaget som <em>äger kablarna</em> som leder elen till ditt hem. Du kan <strong>inte byta</strong> nätbolag – det är ett lokalt monopol reglerat av staten via <a href="https://www.ei.se" target="_blank" rel="noopener noreferrer">Energimarknadsinspektionen</a>. Bor du i Göteborg är det Göteborg Energi Nät, i Stockholm Ellevio eller Vattenfall Eldistribution, och så vidare.</p>
+<p>Fakturan innehåller:</p>
+<ul>
+  <li>Fast nätavgift per år (abonnemang, beror på säkringsstorlek)</li>
+  <li>Rörlig nätavgift per kWh (lägre på sommaren i vissa områden)</li>
+  <li>Mätaravgift</li>
+  <li>Moms 25 %</li>
+</ul>
+
+<h2>Vad kostar vad – ungefär?</h2>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Post</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Typisk kostnad (villa, 15 000 kWh/år)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Elpris inkl. moms</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">ca 60–120 öre/kWh</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Elskatt inkl. moms (2026)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">45 öre/kWh</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Elnätsavgift (fast + rörlig)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">8 000–15 000 kr/år</td></tr>
+  </tbody>
+</table>
+
+<h2>Kan jag få en samlad faktura?</h2>
+<p>Vissa elbolag erbjuder <strong>samlingsfaktura</strong> där de fakturerar dig för båda delarna och sedan betalar nätbolaget. Du får en räkning, men betalar fortfarande för båda. Fråga ditt elbolag om de erbjuder det.</p>
+
+<h2>Det enda du kan påverka är elbolaget</h2>
+<p>Nätavgiften är reglerad och du kan inte förhandla den. Men <strong>elhandelspriset</strong> kan skilja flera tusen kronor per år mellan billigaste och dyraste avtal. Jämför elavtal för ditt postnummer direkt på vår <a href="/">prisjämförare</a>.</p>
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

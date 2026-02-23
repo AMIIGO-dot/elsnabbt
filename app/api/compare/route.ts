@@ -129,10 +129,10 @@ export async function GET(request: NextRequest) {
 
   // Beräkna totalkostnad per år.
   // AvtalJamforPris är redan inkl. moms (25%).
-  // Elskatt (54,875 öre/kWh) är exkl. moms → multipliceras med 1,25.
+  // Elskatt fr.o.m. 1 jan 2026: 36 öre/kWh exkl. moms → ×1,25 = 45,0 öre/kWh inkl. moms.
   // Nätavgift antas inkl. moms.
-  const ELSKATT = 54.875;
-  const ELSKATT_INKL_MOMS = ELSKATT * 1.25; // 68,594 öre/kWh
+  const ELSKATT = 36;
+  const ELSKATT_INKL_MOMS = ELSKATT * 1.25; // 45,0 öre/kWh inkl. moms
   const medianOre = sorted[Math.floor(sorted.length / 2)]?.AvtalJamforPris ?? sorted[0].AvtalJamforPris;
   const medianAr  = Math.round(((medianOre + ELSKATT_INKL_MOMS) * kwh) / 100 + natKr);
 

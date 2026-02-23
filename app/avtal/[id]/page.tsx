@@ -24,7 +24,7 @@ const C = {
   shadow: '0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.05)',
 };
 
-const ELSKATT = 54.875;
+const ELSKATT = 36; // Energiskatt fr.o.m. 1 jan 2026: 36 öre/kWh exkl. moms (45,0 öre/kWh inkl. moms)
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (

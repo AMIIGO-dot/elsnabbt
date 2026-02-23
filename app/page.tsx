@@ -423,7 +423,7 @@ export default function Home() {
                           <div style={{ textAlign: 'right' }}>
                             {offer.prisOre !== undefined && (
                               <>
-                                <div style={{ fontSize: 12, color: C.green, fontWeight: 700, marginBottom: 1 }}>{(offer.prisOre + 68.59).toFixed(2)} öre/kWh</div>
+                                <div style={{ fontSize: 12, color: C.green, fontWeight: 700, marginBottom: 1 }}>{(offer.prisOre + 45.0).toFixed(2)} öre/kWh</div>
                                 <div style={{ fontSize: 10, color: C.textLight, marginBottom: 4 }}>inkl. elskatt & moms</div>
                               </>
                             )}

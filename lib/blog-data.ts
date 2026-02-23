@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
 </ul>
 
 <h2>Elskatt</h2>
-<p>En statlig skatt på all el du förbrukar. 2025 är den <strong>54,875 öre/kWh</strong> i södra Sverige (lägre i norra p.g.a. subventioner). Den ingår alltid i ditt totala pris. Läs mer om elskatt hos <a href="https://www.energimyndigheten.se" target="_blank" rel="noopener noreferrer">Energimyndigheten</a>.</p>
+<p>En statlig skatt på all el du förbrukar. Fr.o.m. 1 januari 2026 är den <strong>36 öre/kWh exkl. moms</strong> (45 öre/kWh inkl. moms) i södra Sverige (lägre i norra Sverige p.g.a. subventioner). Den ingår alltid i ditt totala pris. Läs mer om elskatt hos <a href="https://www.energimyndigheten.se" target="_blank" rel="noopener noreferrer">Energimyndigheten</a>.</p>
 
 <h2>Moms – 25% på allt</h2>
 <p>Moms läggs på hela beloppet – elproduktionen + elskatt + nätavgift. Det innebär att du betalar 25% moms även på momsen i praktiken.</p>
@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
 <p>Om du har en villa med 20 000 kWh/år och spotpris 50 öre/kWh:</p>
 <ul>
   <li>Elproduktion: 50 öre/kWh</li>
-  <li>Elskatt: 54,875 öre/kWh</li>
+  <li>Elskatt: 36 öre/kWh (exkl. moms) = 45 öre/kWh inkl. moms (fr.o.m. jan 2026)</li>
   <li>Nätavgift rörlig: ~35 öre/kWh</li>
   <li>Summa ink moms (~139 öre × 1,25): ca <strong>2,44 kr/kWh</strong></li>
   <li>Totalt per år: ca <strong>48 800 kr</strong></li>

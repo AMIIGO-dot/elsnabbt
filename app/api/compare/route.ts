@@ -54,6 +54,7 @@ interface EiContract {
   BraMiljoval: boolean;
   Rabattavtal: boolean;
   RabattEndastNyaKunder: boolean;
+  Privatkund: boolean;
   Betalningsalternativ?: string;
   Faktureringsalternativ?: string;
 }
@@ -84,7 +85,6 @@ export async function GET(request: NextRequest) {
   const kwh      = parseInt(request.nextUrl.searchParams.get('kwh') ?? '15000');
   const typParam = (request.nextUrl.searchParams.get('typ') ?? 'TIMPRIS').toUpperCase();
   const kundtyp  = request.nextUrl.searchParams.get('kundtyp') === 'foretag' ? 'foretag' : 'privat';
-  const kundkategori = kundtyp === 'foretag' ? 2 : 1;
 
   if (postnr.length !== 5 || !/^\d{5}$/.test(postnr)) {
     return NextResponse.json({ error: 'Ogiltigt postnummer' }, { status: 400 });
@@ -95,7 +95,7 @@ export async function GET(request: NextRequest) {
   const natKr  = natAvgiftAr(elArea);
 
   // Hämta avtal + leverantörsinfo parallellt
-  const apiUrl = `https://www1.ei.se/elinservices/api/json/SokAvtal?postNummer=${postnr}&forbrukning=${kwh}&kundkategori=${kundkategori}`;
+  const apiUrl = `https://www1.ei.se/elinservices/api/json/SokAvtal?postNummer=${postnr}&forbrukning=${kwh}`;
   const [res, suppliersRes] = await Promise.all([
     fetch(apiUrl, { headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0' }, next: { revalidate: 3600 } }),
     fetch('https://www1.ei.se/elinservices/api/json/GetElleverantorer', { headers: { Accept: 'application/json' }, next: { revalidate: 86400 } }),
@@ -114,8 +114,11 @@ export async function GET(request: NextRequest) {
     for (const s of suppliers) supplierMap.set(s.ElLeverantorId, s);
   }
 
-  // Filtrera på vald avtalstyp
-  const filtered = allContracts.filter(c => typIds.includes(c.AvtalTypId));
+  // Filtrera på vald avtalstyp + kundtyp (Privatkund-fältet)
+  const filtered = allContracts.filter(c =>
+    typIds.includes(c.AvtalTypId) &&
+    (kundtyp === 'foretag' ? c.Privatkund === false : c.Privatkund === true)
+  );
 
   if (filtered.length === 0) {
     return NextResponse.json({ error: 'Inga avtal hittades för vald typ' }, { status: 404 });

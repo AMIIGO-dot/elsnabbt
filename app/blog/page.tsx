@@ -21,10 +21,12 @@ const C = {
 };
 
 const categoryColors: Record<string, { bg: string; text: string }> = {
-  'Avtalsguider': { bg: '#dbeafe', text: '#1d4ed8' },
-  'Spara el':     { bg: '#dcfce7', text: '#166534' },
-  'Hållbarhet':  { bg: '#d1fae5', text: '#065f46' },
+  'Avtalsguider':    { bg: '#dbeafe', text: '#1d4ed8' },
+  'Spara el':        { bg: '#dcfce7', text: '#166534' },
+  'Hållbarhet':      { bg: '#d1fae5', text: '#065f46' },
   'Förstå elpriset': { bg: '#fef3c7', text: '#92400e' },
+  'Elbil & laddning':{ bg: '#ede9fe', text: '#5b21b6' },
+  'Grunderna':       { bg: '#fee2e2', text: '#991b1b' },
 };
 
 export default function BlogPage() {

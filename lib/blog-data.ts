@@ -617,6 +617,460 @@ export const blogPosts: BlogPost[] = [
 <p>Nätavgiften är reglerad och du kan inte förhandla den. Men <strong>elhandelspriset</strong> kan skilja flera tusen kronor per år mellan billigaste och dyraste avtal. Jämför elavtal för ditt postnummer direkt på vår <a href="/">prisjämförare</a>.</p>
     `,
   },
+  // ── YTTERLIGARE SEO-GUIDER ──
+  {
+    slug: 'rorligt-elpris-for-och-nackdelar',
+    title: 'Rörligt elpris 2026 – för- och nackdelar du måste känna till',
+    description: 'Allt om rörligt elpris: hur det fungerar, varför det historiskt är billigare än fast pris, och när det faktiskt kan vara ett dåligt val.',
+    category: 'Avtalsguider',
+    publishedAt: '2026-02-25',
+    readMinutes: 5,
+    content: `
+<h2>Vad är rörligt elpris?</h2>
+<p>Rörligt elpris är ett samlingsnamn för elavtal där priset varierar med marknaden. Det finns tre varianter:</p>
+<ul>
+  <li><strong>Timpris</strong> – Priset ändras varje timme (elbörsen Nord Pool)</li>
+  <li><strong>Månadsrörligt</strong> – Snittet av börspriset under månaden + leverantörens påslag</li>
+  <li><strong>Kvartspris</strong> – Terminspriset för nästa kvartal, låst tre månader i taget</li>
+</ul>
+<p>Gemensamt är att priset inte är garanterat för lång tid framöver – till skillnad från fasta prisavtal.</p>
+
+<h2>Varför är rörligt elpris billigare i snitt?</h2>
+<p>Historiska data från <a href="https://www.ei.se" target="_blank" rel="noopener noreferrer">Energimarknadsinspektionen</a> och oberoende analyser visar att rörliga konsumenter i genomsnitt betalar <strong>5–15% mindre</strong> än konsumenter med fast pris. Anledningen: leverantören tar inte betalt för att garantera priset. Det fasta priset innehåller en riskpremium.</p>
+
+<h2>Fördelar med rörligt elpris</h2>
+<ul>
+  <li><strong>Lägre snittid kostnad</strong> – Historiskt billigare än fast pris över längre perioder</li>
+  <li><strong>Ingen bindningstid</strong> – De flesta rörliga avtal har 1 månads uppsägningstid</li>
+  <li><strong>Ingen straffavgift vid byte</strong> – Du kan byta fritt</li>
+  <li><strong>Dra nytta av prisfallet</strong> – Om börspriset faller minskar din kostnad omedelbart</li>
+</ul>
+
+<h2>Nackdelar med rörligt elpris</h2>
+<ul>
+  <li><strong>Oförutsägbarhet</strong> – Din räkning kan variera kraftigt månad till månad</li>
+  <li><strong>Risk vid prisktoppar</strong> – Vintern 2021–2022 nådde spotpriset 6–8 kr/kWh i södra Sverige</li>
+  <li><strong>Kräver aktivt engagemang</strong> – Du bör hålla koll på att ditt rörliga avtal förblir konkurrenskraftigt</li>
+</ul>
+
+<h2>Vem passar rörligt bäst?</h2>
+<p>Rörligt elpris passar bäst för dig som:</p>
+<ul>
+  <li>Kan flytta viss elförbrukning till billiga timmar (timpris)</li>
+  <li>Tål månatliga prisvariationer utan att det skapar ekonomisk stress</li>
+  <li>Aktivt jämför och byter vid behov – minst en gång per år</li>
+</ul>
+
+<h2>Vad händer om priserna skenar?</h2>
+<p>Vid extrema priser kan du alltid byta till ett fast avtal. Observera dock att när priserna stiger tenderar fasta avtal att bli dyrare parallellt – leverantörerna prissätter utifrån terminspriser. Det bästa skyddet är att hålla sig informerad och inte sitta passiv.</p>
+<p>Jämför aktuella rörliga avtal för ditt postnummer på vår <a href="/">prisjämförare</a>.</p>
+    `,
+  },
+  {
+    slug: 'vad-ar-bra-elpris-per-kwh',
+    title: 'Vad är ett bra elpris per kWh? Guide för 2026',
+    description: 'Vad kostar el normalt? Lär dig vad som är ett bra elpris per kWh 2026 – och hur du avgör om ditt avtal är konkurrenskraftigt eller inte.',
+    category: 'Förstå elpriset',
+    publishedAt: '2026-02-26',
+    readMinutes: 5,
+    content: `
+<h2>Vad kostar el per kWh i Sverige 2026?</h2>
+<p>Elpriset du ser i annonser och jämförelsetjänster är elproduktionskostnaden – det vill säga den del du kan påverka och byta. Den rörliga produktionskostnaden i Sverige under början av 2026 ligger typiskt på:</p>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Avtaltyp</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Typiskt pris (SE3, jan–feb 2026)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Timpris (snitt)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">45–80 öre/kWh</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Månadsrörligt</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">50–90 öre/kWh</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Kvartspris</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">55–95 öre/kWh</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Fast pris 1 år</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">70–110 öre/kWh</td></tr>
+  </tbody>
+</table>
+<p>Lägg till elskatt (45 öre/kWh inkl. moms), nätavgift (20–50 öre/kWh) och moms, så hamnar den <strong>totala kostnaden</strong> typiskt på 1,50–2,50 kr/kWh beroende på avtal och nätbolag.</p>
+
+<h2>Hur avgör du om ditt avtal är konkurrenskraftigt?</h2>
+<p>Jämför ditt pris med lägsta tillgängliga avtal för ditt postnummer och din förbrukning. Det viktigaste är inte att ha exakt lägst öre/kWh – det är att <strong>inte betala onödigt mycket mer</strong> än marknadsläget.</p>
+<p>En tumregel: om ditt rörliga avtal är <strong>mer än 10–15 öre/kWh över</strong> det billigaste konkurrerande alternativet är det dags att byta.</p>
+
+<h2>Vad elskatt och nät kostar – som du inte kan förhandla</h2>
+<ul>
+  <li><strong>Elskatt (2026):</strong> 36,0 öre/kWh exkl. moms = 45 öre/kWh inkl. moms (lägre i SE1–SE2)</li>
+  <li><strong>Nätavgift:</strong> Fast del 1 500–5 000 kr/år + rörlig del 20–50 öre/kWh</li>
+  <li><strong>Moms:</strong> 25% på allt ovanstående</li>
+</ul>
+
+<h2>Hur skillnaden ser ut i kronor</h2>
+<p>Med 15 000 kWh/år och 20 öre/kWh i prisskillnad handlar det om <strong>3 000 kr per år</strong>. Det är pengar du kan spara bara genom att byta avtal – på 30 sekunder via vår <a href="/">prisjämförare</a>.</p>
+    `,
+  },
+  {
+    slug: 'basta-elbolaget-2026',
+    title: 'Bästa elbolaget 2026 – hur väljer du rätt?',
+    description: 'Det finns inget universellt bästa elbolag – rätt val beror på var du bor, din förbrukning och vad du värderar. Så här tänker du för att hitta ditt bästa elbolag 2026.',
+    category: 'Avtalsguider',
+    publishedAt: '2026-02-27',
+    readMinutes: 6,
+    content: `
+<h2>Varför finns det inget objektivt "bästa elbolag"?</h2>
+<p>Priset på el beror på <strong>ditt postnummer</strong> (elområde SE1–SE4), <strong>din årsförbrukning</strong> och vilken avtalstyp du väljer. Det billigaste elbolaget för en villa i Malmö med 25 000 kWh/år är sällan samma som för en lägenhet i Umeå med 2 000 kWh/år.</p>
+<p>Det som däremot går att jämföra objektivt är: <em>vilket avtal ger lägst total kostnad för just din situation?</em></p>
+
+<h2>Stora vs. små elbolag – vad skiljer dem?</h2>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Faktor</th>
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Stora aktörer (Vattenfall, E.ON, Fortum)</th>
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Utmanare (Tibber, Bixia, Lumenaza m.fl.)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Pris</td><td style="padding:8px;border:1px solid #e5e7eb">Ofta inte lägst</td><td style="padding:8px;border:1px solid #e5e7eb">Varierar, ofta konkurrenskraftigt</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Kundservice</td><td style="padding:8px;border:1px solid #e5e7eb">Stort supportnät, long öppettider</td><td style="padding:8px;border:1px solid #e5e7eb">Ofta app-baserat, snabbare digitalt</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Avtalsform</td><td style="padding:8px;border:1px solid #e5e7eb">Alla typer</td><td style="padding:8px;border:1px solid #e5e7eb">Specialiserade (t.ex. timpris)</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Grön el</td><td style="padding:8px;border:1px solid #e5e7eb">Tillval</td><td style="padding:8px;border:1px solid #e5e7eb">Ingår ofta som standard</td></tr>
+  </tbody>
+</table>
+
+<h2>Vad ska du faktiskt titta på?</h2>
+<ol>
+  <li><strong>Total kostnad per år</strong> – Räkna in fast månadsavgift + rörligt pris × din förbrukning</li>
+  <li><strong>Bindningstid</strong> – Undvik långa bindningstider om du inte är säker på prisutvecklingen</li>
+  <li><strong>Uppsägningstid</strong> – Standard är 1 månad. Kortare är bättre.</li>
+  <li><strong>Prispåslag</strong> – Hur stor marginal tar leverantören utöver elbörsprisen?</li>
+  <li><strong>Kundbetyg</strong> – Kolla Trustpilot och Konsumentverkets klagomålsstatistik</li>
+</ol>
+
+<h2>Stabila aktörer att jämföra</h2>
+<p>Bland de aktörer som konsekvent rankas högt i oberoende prisjämförelser och kundbetyg finns bl.a. <strong>Tibber</strong> (timpris, app-baserat), <strong>Bixia</strong> (hållbarhetsprofil, bra pris), <strong>Fortum</strong> (brett utbud) och ett antal regionala bolag.</p>
+<p>Men poängen är: <strong>status ändras snabbt</strong>. Det bästa bolaget i oktober kanske är medelmåttigt i april. Jämför alltid aktuellt pris på vår <a href="/">prisjämförare</a> innan du tecknar – det tar 30 sekunder och data hämtas direkt från marknaden.</p>
+
+<h2>Varning: introduktionspriser</h2>
+<p>Var uppmärksam på "kampanjpriser" de första 3–6 månaderna som sedan höjs kraftigt. Räkna alltid på priset <em>efter</em> kampanjperioden.</p>
+    `,
+  },
+  {
+    slug: 'varmepump-och-elavtal',
+    title: 'Värmepump och elavtal – maximera din besparing',
+    description: 'Har du bergvärme, luft-vattenvärmepump eller luft-luftvärmepump? Rätt elavtal tillsammans med din värmepump kan spara dig tusentals kronor extra per år.',
+    category: 'Spara el',
+    publishedAt: '2026-02-27',
+    readMinutes: 6,
+    content: `
+<h2>Varför är elavtalet extra viktigt med värmepump?</h2>
+<p>En värmepump är en stor elkonsument – en bergvärmepump i en villa drar typiskt <strong>8 000–15 000 kWh/år</strong> enbart för uppvärmning. Det innebär att din totala elförbrukning kanske är 12 000–20 000 kWh/år. Med den volymen är varje öre per kWh du sparar värd 120–200 kr per år.</p>
+
+<h2>Vilken avtalstyp passar bäst med värmepump?</h2>
+<h3>Timpris – bäst om du har smart styrning</h3>
+<p>En bergvärmepump eller luft-vattenvärmepump kan ofta styras via smarta termostater eller elhanteringsappar. Genom att programmera pumpen att arbeta hårdare under de billigaste timmarna (ofta kl. 01–06) och lagra värme i huset/en varmvattentank, kan du spara <strong>15–25% på driftkostnaden</strong>.</p>
+<p>Leverantörer som Tibber och Bixia erbjuder API-koppling mot populära värmepumpar från Nibe, Bosch och Mitsubishi.</p>
+
+<h3>Kvartspris – enklare alternativ</h3>
+<p>Ingen smart styrning men vill ändå följa marknaden? Kvartspris ger ett förutsägbart pris per kvartal utan att du behöver göra något aktivt.</p>
+
+<h3>Fast pris – sällan optimalt för värmepump</h3>
+<p>Med en hög förbrukning betalar du mer riskpremium i kronor. Historiskt sett är rörligt billigare på lång sikt för höga förbrukare.</p>
+
+<h2>Luft-luft vs bergvärme – olika strategier</h2>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Pumptyp</th>
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Elförbrukning/år</th>
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Smart styrning möjlig?</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Luft-luft</td><td style="padding:8px;border:1px solid #e5e7eb">3 000–6 000 kWh</td><td style="padding:8px;border:1px solid #e5e7eb">Begränsat</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Luft-vatten</td><td style="padding:8px;border:1px solid #e5e7eb">6 000–12 000 kWh</td><td style="padding:8px;border:1px solid #e5e7eb">Ja, via styrsystem</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Berg-/mark-/sjövärmepump</td><td style="padding:8px;border:1px solid #e5e7eb">8 000–15 000 kWh</td><td style="padding:8px;border:1px solid #e5e7eb">Ja, fullt integrerbart</td></tr>
+  </tbody>
+</table>
+
+<h2>COP – värmepumpens effektivitetsmått</h2>
+<p>COP (Coefficient of Performance) anger hur många kWh värme du får ut per kWh el in. En bergvärmepump har COP 3–5, vilket innebär att du producerar 3–5 kWh värme för varje kWh el. Med ett bra elavtal och smart styrning multipliceras besparingen ytterligare.</p>
+
+<h2>Räkneexempel</h2>
+<p>Villa med bergvärmepump, 12 000 kWh/år:</p>
+<ul>
+  <li>Smart timprisavtal vs genomsnittligt rörligt: sparbesparing ~15% × 12 000 kWh × 0,70 kr/kWh ≈ <strong>1 260 kr/år extra</strong></li>
+  <li>Bästa vs sämsta avtal på marknaden (20 öre/kWh skillnad): <strong>2 400 kr/år</strong></li>
+</ul>
+<p>Jämför avtal för din förbrukning och postnummer på vår <a href="/">startsida</a>.</p>
+    `,
+  },
+  {
+    slug: 'ladda-elbil-hemma-kostnad-tips',
+    title: 'Ladda elbil hemma – kostnad, avtal och smarta tips 2026',
+    description: 'Allt om hemmaladdning av elbil: vad det kostar per mil, vilket elavtal som minimerar laddkostnaden, hur en smart laddbox fungerar och hur du maxar den nya elbilsbonusen.',
+    category: 'Elbil & laddning',
+    publishedAt: '2026-02-27',
+    readMinutes: 7,
+    content: `
+<h2>Vad kostar det att ladda elbilen hemma?</h2>
+<p>En genomsnittlig elbil förbrukar <strong>15–25 kWh per 10 mil</strong>. Med ett typiskt elpris (exkl. skatt och nät) på 60–80 öre/kWh och full kostnad på ca 1,50–2,50 kr/kWh handlar det om:</p>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Förbrukning</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Kostnad/mil (1,50 kr/kWh)</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Kostnad/mil (2,50 kr/kWh)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">15 kWh/10 mil</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">2,25 kr/mil</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">3,75 kr/mil</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">20 kWh/10 mil</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">3,00 kr/mil</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">5,00 kr/mil</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">25 kWh/10 mil</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">3,75 kr/mil</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">6,25 kr/mil</td></tr>
+  </tbody>
+</table>
+<p>Jämfört med bensin (12–15 kr/mil) är hemmaladdning alltså <strong>3–5 gånger billigare per mil</strong>.</p>
+
+<h2>Vilket elavtal är bäst för elbilsägare?</h2>
+<p><strong>Timprisavtal är det klart bästa valet</strong> för dig med elbil. Anledningen: du kan schemalägga laddningen till de timmar (typiskt kl. 00–06) när elpriset är som lägst – ofta 30–60% under dagspriset på vardagar. En smart laddbox sköter det automatiskt.</p>
+<p>Besparingspotential med smart laddning:</p>
+<ul>
+  <li>Kör du 1 500 mil/år med 18 kWh/10 mil = 2 700 kWh laddning per år</li>
+  <li>Nattladdning (timpris nattnivå) vs dagladdning: ca 30 öre/kWh skillnad</li>
+  <li>Besparing: 2 700 × 0,30 = <strong>810 kr/år</strong> – bara på smartare laddtidpunkt</li>
+</ul>
+
+<h2>Smart laddbox – värd investeringen?</h2>
+<p>En smart laddbox (t.ex. Easee, Zaptec, Garo, Charge Amps) kostar 5 000–15 000 kr installerad. Funktioner som spelar roll:</p>
+<ul>
+  <li><strong>Schemaläggning</strong> – Laddar automatiskt de billigaste timmarna</li>
+  <li><strong>Prisoptimering</strong> – Koppling mot Tibber eller liknande för realtidsprisoptimering</li>
+  <li><strong>Effektbalansering</strong> – Laddar långsammare när resten av huset drar mycket (viktigt för effektavgifter)</li>
+  <li><strong>V2H (Vehicle-to-Home)</strong> – Nyare modeller kan mata tillbaka el från batterierna till hemmet under dyra timmar</li>
+</ul>
+
+<h2>Kan du använda elnätets 10A-uttag (Schuko)?</h2>
+<p>Ja, det fungerar som nödlösning (ca 1,5 kW = 15 km räckvidd per timme) men är inte rekommenderat för regelbunden laddning. Risken för överhettning av förlängningskablar och uttag är reell. En fast laddbox är säkrare och snabbare.</p>
+
+<h2>Laddbox och ROT-avdrag</h2>
+<p>Installation av laddbox ger <strong>ROT-avdrag (30%)</strong> på arbetskostnaden. Installation värd 5 000 kr i arbete ger alltså 1 500 kr skattereduktion. Tillsammans med den nya elbilspremien kan du minska den totala kostnaden rejält.</p>
+
+<h2>Jämför elavtal för hemmaladdning</h2>
+<p>Med en elbil ökar din hemmaförbrukning med 1 500–3 000 kWh/år. Det gör valet av elavtal ännu viktigare. Ange din uppskattade totala förbrukning (inklusive elbil) på vår <a href="/">prisjämförare</a> för att se vilket avtal som ger lägst total kostnad.</p>
+    `,
+  },
+  {
+    slug: 'fjarrvarme-vs-elvarme',
+    title: 'Fjärrvärme vs elvärme – vad är billigast 2026?',
+    description: 'Vilken uppvärmningsform är billigast: fjärrvärme eller elvärme? Vi jämför priser, för- och nackdelar och vad du bör tänka på om du funderar på att byta.',
+    category: 'Spara el',
+    publishedAt: '2026-02-27',
+    readMinutes: 6,
+    content: `
+<h2>Hur skiljer sig fjärrvärme och elvärme?</h2>
+<p><strong>Fjärrvärme:</strong> Värme producerad centralt (ofta av spillvärme, biobränsle eller värmepumpar) distribueras via isolerade rör till bostaden. Du betalar ett fast abonnemang plus ett rörligt pris per MWh.</p>
+<p><strong>Elvärme:</strong> El omvandlas direkt till värme via elradiatorer, vattenburna värmesystem eller värmepump. Du betalar elpris per kWh.</p>
+
+<h2>Prisjämförelse 2026</h2>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Uppvärmningsform</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Typisk kostnad per kWh värme</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Fjärrvärme</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">0,80–1,30 kr/kWh (inkl. moms)</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Direktelvärme (elradiator)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">1,50–2,50 kr/kWh (inkl. moms)</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Bergvärmepump (COP 3)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">0,50–0,85 kr/kWh</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Luft-luftvp (COP 3,5)</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">0,45–0,75 kr/kWh</td></tr>
+  </tbody>
+</table>
+<p>Slutsats: <strong>Direktelvärme är dyrast per kWh värme</strong>. Fjärrvärme är billigare än direkt el, men dyrare än värmepump. En värmepump – oavsett typ – är det billigaste alternativet räknat per kWh värme.</p>
+
+<h2>Kan du välja fritt?</h2>
+<p>Nej – inte alltid. Fjärrvärme kräver att ditt område har ett fjärrvärmenät. Bor du i en villa utanför tätort finns det ofta inget nät och du är hänvisad till elvärme, ved, pellets eller värmepump. Bor du i lägenheten bestämmer hyresvärd eller bostadsrättsförening uppvärmningsform.</p>
+
+<h2>Kan man byta från elvärme till fjärrvärme?</h2>
+<p>Om fjärrvärmeanslutning finns i ditt område kostar anslutning 30 000–80 000 kr för en villa, plus installation av värmeväxlare och vattenburet system (~50 000–120 000 kr om du har direktelvärme idag). Total investering: 80 000–200 000 kr. Payback-tid är lång.</p>
+<p>Mer kostnadseffektivt för de flesta villaägare med direktelvärme är att investera i en <strong>luft-vattenvärmepump eller bergvärmepump</strong> istället.</p>
+
+<h2>Optimera elvärme med rätt elavtal</h2>
+<p>Har du kvar direktelvärme? Det finns inget du kan göra åt att det är en dyr uppvärmningsform – men du kan minimera skadan med rätt elavtal. Vår <a href="/">prisjämförare</a> visar det billigaste alternativet för din förbrukning och ditt postnummer. Skillnaden är ofta 3 000–8 000 kr/år.</p>
+    `,
+  },
+  {
+    slug: 'binda-elpriset-smart-2026',
+    title: 'Binda elpriset – är fast pris smart 2026?',
+    description: 'Funderar du på att binda elpriset med ett fast avtal? Lär dig när det är smart och när det är en dålig idé – och vad du bör tänka på under 2026.',
+    category: 'Avtalsguider',
+    publishedAt: '2026-02-27',
+    readMinutes: 5,
+    content: `
+<h2>Vad innebär det att "binda" elpriset?</h2>
+<p>Att binda elpriset innebär att du tecknar ett <strong>fast prisavtal</strong> – din elproduktionskostnad är låst under hela avtalsperioden, oavsett hur börspriset rör sig. Bindningstider är vanligtvis 1, 2 eller 3 år.</p>
+
+<h2>Varför väljer folk att binda?</h2>
+<ol>
+  <li><strong>Trygghet</strong> – Du vet exakt vad elproduktionen kostar per kWh under perioden</li>
+  <li><strong>Budgetering</strong> – Förutsägbar ellräkning, inget som "smäller till" en kall vinter</li>
+  <li><strong>Skydd mot prishopp</strong> – Vintern 2021–2022 var de med fast pris stora vinnare</li>
+</ol>
+
+<h2>Varför är det riskabelt att binda?</h2>
+<ol>
+  <li><strong>Du betalar en riskpremium</strong> – Leverantören prissätter fix till terminspris + marginal. Historiskt kostar det dig extra i snitt.</li>
+  <li><strong>Priserna kan falla</strong> – Om spotpriser faller under din bindningstid betalar du mer än nödvändigt</li>
+  <li><strong>Inlösenklausul</strong> – Vill du bryta ett fast avtal i förtid kan kostnaden vara hög</li>
+  <li><strong>Lång horisont = hög osäkerhet</strong> – Ingen vet säkert hur elpriset ser ut om 2–3 år</li>
+</ol>
+
+<h2>Hur resonerar experterna?</h2>
+<p>Energianalytiker på exv. <a href="https://www.energimarknadsbyraan.se" target="_blank" rel="noopener noreferrer">Energimarknadsbyran</a> brukar säga att fast pris är en <em>försäkring</em>, inte en investering. Du betalar en premie för att slippa risken – precis som med hemförsäkring. Vill du ha den psykologiska tryggheten är det legitimt att välja fast.</p>
+
+<h2>Indikationer på att binda KAN vara klokt 2026</h2>
+<ul>
+  <li>Terminspriserna (futurer på <a href="https://www.nordpoolgroup.com" target="_blank" rel="noopener noreferrer">Nord Pool</a>) pekar på kommande prisuppgång</li>
+  <li>Du har extremt hög förbrukning (villa med direktelvärme, 25 000+ kWh/år) – stor exponering</li>
+  <li>Du vill absolutt inte tänka på elpriser under ett eller två år</li>
+</ul>
+
+<h2>Indikationer på att INTE binda</h2>
+<ul>
+  <li>Terminspriserna är klart högre än nuvarande spotpriser (leverantörerna har prisat in uppgång)</li>
+  <li>Du är beredd att byta avtal om spotpriserna stiger kraftigt</li>
+  <li>Din förbrukning är låg (lägenhet) – riskpremien är liten i kronor</li>
+</ul>
+
+<h2>Alternativ till fix: kvartspris</h2>
+<p>Kvartspris ger tre månaders förutsägbarhet utan lika hög riskpremium som fast pris. Många experter rekommenderar det som "best of both worlds" för normalförbrukare. Jämför alla avtalstyper för ditt postnummer på vår <a href="/">prisjämförare</a>.</p>
+    `,
+  },
+  {
+    slug: 'elavtal-utan-bindningstid',
+    title: 'Elavtal utan bindningstid – vad du behöver veta',
+    description: 'De flesta rörliga elavtal saknar bindningstid – men vad innebär det egentligen? Och finns det nackdelar med att inte ha ett bundet avtal?',
+    category: 'Avtalsguider',
+    publishedAt: '2026-02-27',
+    readMinutes: 4,
+    content: `
+<h2>Vad är ett elavtal utan bindningstid?</h2>
+<p>Ett elavtal utan bindningstid innebär att du kan säga upp avtalet när som helst, vanligtvis med 1 månads uppsägningstid. Ni är heller inte bundna av varandra – leverantören kan ändra priset (med föregående avisering), och du kan gå. De allra flesta rörliga elavtal – månadsrörliga, timpris och kvartspris – saknar bindningstid.</p>
+
+<h2>Fördelar utan bindningstid</h2>
+<ul>
+  <li><strong>Full flexibilitet</strong> – Byt när du hittar ett bättre pris, utan kostnad</li>
+  <li><strong>Inget straff vid byte</strong> – Inga inlösenavgifter om du byter i förtid</li>
+  <li><strong>Skyddar mot dåliga avtal</strong> – Om Din leverantör höjer priset kan du snabbt flytta</li>
+</ul>
+
+<h2>Nackdelar utan bindningstid</h2>
+<ul>
+  <li><strong>Priset kan ändras</strong> – Leverantören kan höja det rörliga påslaget med 30 dagars varsel</li>
+  <li><strong>Du måste vara aktiv</strong> – Passiva kunder tenderar att betala mer efter hand</li>
+  <li><strong>Ingen prisgaranti</strong> – Till skillnad mot fast pris vet du inte exakt vad du betalar nästa kvartal</li>
+</ul>
+
+<h2>Vad händer om du inte gör något?</h2>
+<p>Det vanligaste felet är att teckna ett bra avtal och sedan glömma det. Leverantörer räknar med kundtröghet – de kan gradvis höja påslaget, i vetskap om att de flesta inte märker det. Fenomenet kallas "loyalty penalty".</p>
+<p>Lösning: sätt en kalenderpåminnelse varje år (lämpligen höst, inför vinterhalvåret) för att jämföra ditt avtal med marknaden. På vår <a href="/">prisjämförare</a> tar det 30 sekunder.</p>
+
+<h2>När är bindningstid okej?</h2>
+<p>Fast pris med bindningstid kan vara vettigt om du aktivt väljer det som en strategi – inte av passivitet. Tänk på det som att köpa en försäkring: du betalar en premie för trygghet. Gör det bara med öppna ögon och koll på vad du betalar.</p>
+
+<h2>Sammanfattning</h2>
+<p>För de flesta konsumenter är ett rörligt avtal utan bindningstid det bästa startläget – förutsatt att du faktiskt byter om priset försämras. Kombinera med en ≤1 jämförelse per år på vår <a href="/">startsida</a> för optimalt resultat.</p>
+    `,
+  },
+  {
+    slug: 'spara-el-pa-vintern',
+    title: 'Spara el på vintern – 12 beprövade tips för 2026',
+    description: 'Vinterhalvåret är när elräkningen slår som hårdast. Här är 12 konkreta tips för att minska din elförbrukning under vinterhalvåret – utan att frysa.',
+    category: 'Spara el',
+    publishedAt: '2026-02-27',
+    readMinutes: 6,
+    content: `
+<h2>Varför kostar el mer på vintern?</h2>
+<p>Det är dubbelt dyrt på vintern: du förbrukar mer el (uppvärmning, belysning, varmvatten) OCH spotpriset per kWh är generellt högre (ökad efterfrågan i hela Norden och Europa). Det gör att vinterns elräkning kan vara 3–4 gånger högre än sommarmånaderna.</p>
+
+<h2>12 tips att börja med nu</h2>
+
+<h3>Utan kostnad</h3>
+<ol>
+  <li><strong>Sänk nattemperaturen 3–5 grader</strong> – Sätt termostaterna på 18°C kl. 23–06. Huset är ändå varmt när du vaknar. Sparar 10–15% på värme.</li>
+  <li><strong>Sänk dagtemperaturen 1–2 grader</strong> – Från 22°C till 20°C. Du märker knappt skillnaden. Sparar ytterligare 10%.</li>
+  <li><strong>Undvik "vädra" med fönstret på glänt</strong> – Vädra snabbt och effektivt med full genomdrag i 2–3 minuter istället. Timmar med öppet fönster slösar värme.</li>
+  <li><strong>Flytta möbler från elementet</strong> – Soffor och draperier framför radiatorer hindrar värmeflödet. Fri cirkulation ger jämnare temperatur med lägre effekt.</li>
+  <li><strong>Stäng dörrar till rum du inte använder</strong> – Värm bara de rum du faktiskt vistas i.</li>
+  <li><strong>Tvätta och diska på natten</strong> – Med timprisavtal är elpriset kl. 00–06 ofta 40–70% lägre än kl. 08–09. Timer i maskinen sköter det.</li>
+  <li><strong>Sänk varmvattentemperaturen till 55°C</strong> – Högre temperatur kräver mer energi och är onödigt. 55°C förhindrar Legionella och räcker mer än väl.</li>
+</ol>
+
+<h3>Enkla investeringar (låg kostnad)</h3>
+<ol start="8">
+  <li><strong>Täta ytterdörrar och fönster</strong> – Tätningslister kostar 200–800 kr och ger omedelbara besparingar. Känn efter drag runt dörrkarmar en kall dag.</li>
+  <li><strong>Byt till LED i alla lampor</strong> – Vintern means mer belysning. LED-lampor förbrukar 80–90% mindre energi.</li>
+  <li><strong>Smartstick på underhållningselektronik</strong> – TV, spelkonsol och ljudanläggning i stand-by drar el konstant. En smartstick stänger av hela gruppen med ett klick (ca 100 kr).</li>
+</ol>
+
+<h3>Investeringar med snabbt betald tid</h3>
+<ol start="11">
+  <li><strong>Smart termostat</strong> – Produkter som Google Nest, Homemade Energy eller Fibaro kan sänka uppvärmningskostnaden med 10–25% och betalar sig på under ett år.</li>
+  <li><strong>Jämför och byt elavtal</strong> – Det snabbaste tipset av alla. Skillnaden mellan bästa och sämsta avtal i januari kan vara 30 öre/kWh. Med 2 500 kWh i januari är det <strong>750 kr bara den månaden</strong>. Jämför på vår <a href="/">prisjämförare</a> – tar 30 sekunder.</li>
+</ol>
+
+<h2>Hur stor skillnad gör det totalt?</h2>
+<p>Tillämpar du alla 12 tips på en villa med elvärme och 20 000 kWh/år kan du spara:</p>
+<ul>
+  <li>Beteendetips (1–7): 15–20% = 3 000–4 000 kWh = 4 500–6 000 kr/år</li>
+  <li>Investeringstips (8–11): 5–10% = 1 000–2 000 kWh = 1 500–3 000 kr/år</li>
+  <li>Byte av elavtal: 2 000–8 000 kr/år beroende på nuvarande avtal</li>
+</ul>
+<p>Räknar du ihop allt handlar det om <strong>8 000–17 000 kr per år</strong> i potentiella besparingar.</p>
+    `,
+  },
+  {
+    slug: 'nyflyttad-guide-forsta-elavtal',
+    title: 'Nyflyttad – guide till ditt första elavtal',
+    description: 'Nytt hem, ny stad, nytt elavtal. Allt du behöver veta som nyflyttad: hur el fungerar, vad du måste göra, hur du undviker fällor och hittar billigaste avtalet.',
+    category: 'Grunderna',
+    publishedAt: '2026-02-27',
+    readMinutes: 5,
+    content: `
+<h2>Vad behöver du göra när du flyttar in?</h2>
+<p>När du flyttar in i ett nytt hem (hyresrätt eller bostadsrätt/villa med egen elmätare) måste du ordna ett eget elavtal. Om du inte gör det hamnar du automatiskt hos det lokala nätbolagets "anvisningsleverantör" – ett avtal som vanligtvis är bland de dyraste på marknaden.</p>
+<p><strong>Gör detta direkt:</strong> Teckna ett avtal hos en valfri elleverantör innan inflyttningsdagen, eller senast under den allra första veckan.</p>
+
+<h2>Vad behöver du för att teckna avtal?</h2>
+<ul>
+  <li><strong>Mätarpunkt-ID (MPID)</strong> – En 18-siffrig kod som identifierar ditt hem i elnätet. Finns på din elfaktura, i nätbolagets kundportal, eller be din mäklare/hyresvärd.</li>
+  <li><strong>Personnummer</strong> – För kreditkontroll och identifikation</li>
+  <li><strong>Uppskattad årsförbrukning</strong> – Fråga tidigare boende, din hyresvärd eller räkna baserat på boendets storlek</li>
+  <li><strong>Inflyttningsdatum</strong> – Avtalet börjar gälla från detta datum</li>
+</ul>
+
+<h2>Vad är skillnaden på elbolag och nätbolag?</h2>
+<p>Som nyflyttad är det lätt att blanda ihop dem:</p>
+<ul>
+  <li><strong>Nätbolaget</strong> äger kablarna. Beror på var du bor – kan inte väljas. Du betalar automatiskt nätavgift baserat på din adress.</li>
+  <li><strong>Elbolaget</strong> (elhandlaren) säljer elproduktionen. Det är detta du väljer och tecknar avtal med. Du kan byta fritt.</li>
+</ul>
+
+<h2>Välj rätt avtalstyp som nyflyttad</h2>
+<p>Som nyflyttad vet du kanske inte exakt hur mycket el du kommer att förbruka. Rekommendationen är då:</p>
+<ul>
+  <li>Välj ett <strong>rörligt avtal utan bindningstid</strong> (månadsrörligt eller kvartspris)</li>
+  <li>Titta på din elförbrukning de tre första månaderna</li>
+  <li>Jämför sedan med facit – byt om du hittar bättre</li>
+</ul>
+<p>Undvik långa fasta avtal tills du vet din verkliga förbrukning.</p>
+
+<h2>Typisk förbrukning per boendetyp</h2>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+  <thead><tr style="background:#f0fdf4">
+    <th style="text-align:left;padding:8px;border:1px solid #d1fae5">Boendetyp</th>
+    <th style="text-align:right;padding:8px;border:1px solid #d1fae5">Uppskattad förbrukning</th>
+  </tr></thead>
+  <tbody>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">1-rummare / studio</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">1 200–1 800 kWh/år</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">2–3-rumslägenhet</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">2 000–3 500 kWh/år</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Villa utan elvärme</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">5 000–8 000 kWh/år</td></tr>
+    <tr><td style="padding:8px;border:1px solid #e5e7eb">Villa med elvärme</td><td style="text-align:right;padding:8px;border:1px solid #e5e7eb">15 000–30 000 kWh/år</td></tr>
+  </tbody>
+</table>
+
+<h2>Jämför billigaste avtal för din nya adress</h2>
+<p>Ange ditt nya postnummer och en uppskattad förbrukning på vår <a href="/">prisjämförare</a>. Du ser alla tillgängliga avtal sorterade billigast först – det tar 30 sekunder och är helt gratis.</p>
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
